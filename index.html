@@ -101,6 +101,13 @@ nav .lk a:hover{color:#fff}
 .name .nm{display:flex;justify-content:center;font:400 clamp(90px,21vw,360px)/.8 var(--cond);text-transform:uppercase;letter-spacing:-.01em}
 .name .nm span{display:inline-block;background:linear-gradient(180deg,#a8412c 0%,#6a2119 42%,#2a0f0b 100%);-webkit-background-clip:text;background-clip:text;color:transparent;will-change:transform}
 .name .l{transform:translateX(var(--sl,0))}.name .r{transform:translateX(var(--sr,0))}
+.name .studio{font:500 clamp(13px,1.3vw,20px)/1 var(--sans);letter-spacing:.9em;padding-left:.9em;text-align:right;padding-right:max(32px,calc((100vw - 1280px)/2 + 60px));text-transform:uppercase;color:#ffd9de;text-shadow:0 0 6px var(--glow),0 0 16px var(--glow);margin-top:.6vw;position:relative;z-index:4}
+.codes{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.codes span{position:absolute;font:500 clamp(11px,1vw,15px)/1 "Courier New",ui-monospace,monospace;color:#ffb3c1;white-space:nowrap;opacity:0;text-shadow:0 0 8px rgba(216,38,74,.9);animation:drift var(--t) linear var(--d) infinite}
+.codes span:nth-child(3n){color:var(--caramel);text-shadow:0 0 8px rgba(233,168,107,.7)}
+.codes span:nth-child(4n){font-size:clamp(14px,1.3vw,20px)}
+@keyframes drift{0%{opacity:0;transform:translateY(20px)}15%{opacity:.75}70%{opacity:.6}100%{opacity:0;transform:translateY(-70px)}}
+@media(max-width:860px){.codes span{font-size:10.5px}.codes span:nth-child(4n){font-size:12px}.codes span:nth-child(n+15){display:none}}
 .fig{position:absolute;left:50%;bottom:0;height:84vh;width:auto;transform:translate(-50%,0);will-change:transform;filter:drop-shadow(0 0 40px rgba(238,51,88,.25))}
 .fig img{height:100%;width:auto;max-width:none}
 .hero .glowfloor{position:absolute;left:50%;bottom:-20vh;width:70vw;height:40vh;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(238,51,88,.35),transparent);pointer-events:none}
@@ -113,14 +120,17 @@ nav .lk a:hover{color:#fff}
 .hero .ctas{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 .hero .btn{height:54px;min-width:220px}
 @media(max-width:860px){
+ nav{position:absolute}
  .hero{height:auto;min-height:0;padding-top:92px;display:flex;flex-direction:column}
  .name{position:relative;top:0}
  .name .nm{font-size:22.5vw;line-height:.82}
- .fig{position:relative;left:auto;bottom:auto;height:auto;transform:none!important;margin-top:-11vw;display:flex;justify-content:center;z-index:2}
- .fig img{height:min(64vh,128vw);width:auto}
+ .name .studio{font-size:13px;letter-spacing:.8em;padding-left:.8em;padding-right:0;text-align:center;margin-top:8px}
+ .fig{position:relative;left:auto;bottom:auto;height:auto;transform:none!important;margin-top:-6vw;display:flex;justify-content:center;z-index:2}
+ .fig img{height:min(60vh,120vw);width:auto;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
  .hero .glowfloor{bottom:auto;top:55%}
- .band{position:relative;left:auto;right:auto;bottom:auto;top:auto;margin-top:-76px;font-size:clamp(19px,6vw,26px);padding:14px 10px;letter-spacing:.06em}
- .hero .bottom{position:relative;bottom:auto;padding:26px 0 34px}
+ .band{position:relative;left:auto;right:auto;bottom:auto;top:auto;margin-top:-34px;background:none;border:0;font-size:clamp(28px,9vw,40px);line-height:1.05;padding:0 16px;letter-spacing:.04em}
+ .band b{display:block}
+ .hero .bottom{position:relative;bottom:auto;padding:18px 0 34px}
  .hero .bottom .wrap{flex-direction:column;align-items:stretch;gap:18px}
  .hero .lead{max-width:none;font-size:18px;text-align:center;background:none;padding:0;text-shadow:none}
  .hero .ctas{justify-content:stretch;margin-right:0}.hero .ctas .btn{flex:1 1 100%;min-width:0}
@@ -349,7 +359,7 @@ footer a:hover{color:#fff}
 
 .prog{position:fixed;left:0;top:0;height:3px;z-index:60;width:0;background:var(--cherry);box-shadow:0 0 10px var(--glow)}
 
-@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1!important;transform:none!important}}
+@media (prefers-reduced-motion:reduce){.codes span{animation:none!important;opacity:.45!important}*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -370,8 +380,9 @@ footer a:hover{color:#fff}
 
 <main>
 <header class="hero" id="top">
- <div class="name" aria-hidden="true"><div class="nm"><span class="l">Mur</span><span class="r">zilka</span></div></div>
+ <div class="name" aria-hidden="true"><div class="nm"><span class="l">Mur</span><span class="r">zilka</span></div><div class="studio">studio</div></div>
  <div class="glowfloor" aria-hidden="true"></div>
+ <div class="codes" aria-hidden="true"><span style="left:6%;top:30%;--d:0.0s;--t:14s">&lt;/&gt;</span><span style="left:78%;top:24%;--d:1.3s;--t:21s">{ booking }</span><span style="left:12%;top:52%;--d:2.6s;--t:16s">=SUM(B2:B9)</span><span style="left:70%;top:46%;--d:3.9s;--t:23s">price = base + crm</span><span style="left:4%;top:72%;--d:5.2s;--t:18s">&lt;div class="hero"&gt;</span><span style="left:80%;top:66%;--d:6.5s;--t:25s">@media (max-width)</span><span style="left:18%;top:38%;--d:7.8s;--t:20s">fetch("/api/book")</span><span style="left:66%;top:32%;--d:0.1s;--t:15s">wa.me/?text=</span><span style="left:8%;top:86%;--d:1.4s;--t:22s">if (guest) book()</span><span style="left:74%;top:82%;--d:2.7s;--t:17s">SELECT * FROM rooms</span><span style="left:24%;top:64%;--d:4.0s;--t:24s">.btn:hover</span><span style="left:62%;top:58%;--d:5.3s;--t:19s">[ RU · EN · KA ]</span><span style="left:84%;top:40%;--d:6.6s;--t:14s">0% commission</span><span style="left:14%;top:20%;--d:7.9s;--t:21s">new Date()</span><span style="left:56%;top:74%;--d:0.2s;--t:16s">&lt;form&gt;</span><span style="left:30%;top:84%;--d:1.5s;--t:23s">#9E1B3A</span><span style="left:88%;top:56%;--d:2.8s;--t:18s">display: grid</span><span style="left:2%;top:44%;--d:4.1s;--t:25s">✓ paid</span><span style="left:40%;top:90%;--d:5.4s;--t:20s">return site;</span><span style="left:60%;top:18%;--d:6.7s;--t:15s">=COUNTIF(C:C,"New")</span></div>
  <div class="fig" id="fig"><img src="img/sasha-cut.webp" alt="" width="833" height="1254"></div>
  <h1 class="band"><span class="vh">Sasha Murzilka — </span><span data-ru="сайты, которые <b>продают</b>" data-en="websites that <b>sell</b>">сайты, которые <b>продают</b></span></h1>
  <div class="bottom"><div class="wrap">
