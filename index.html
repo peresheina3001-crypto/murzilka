@@ -107,7 +107,7 @@ nav .lk a:hover{color:#fff}
 .codes span:nth-child(3n){color:var(--caramel);text-shadow:0 0 8px rgba(233,168,107,.7)}
 .codes span:nth-child(4n){font-size:clamp(14px,1.3vw,20px)}
 @keyframes drift{0%{opacity:0;transform:translateY(20px)}15%{opacity:.75}70%{opacity:.6}100%{opacity:0;transform:translateY(-70px)}}
-@media(max-width:860px){.codes span{font-size:10.5px}.codes span:nth-child(4n){font-size:12px}.codes span:nth-child(n+15){display:none}}
+@media(max-width:860px){.codes span{font-size:10.5px}.codes span:nth-child(4n){font-size:12px}.codes span:nth-child(n+19){display:none}}
 .fig{position:absolute;left:50%;bottom:0;height:84vh;width:auto;transform:translate(-50%,0);will-change:transform;filter:drop-shadow(0 0 40px rgba(238,51,88,.25))}
 .fig img{height:100%;width:auto;max-width:none}
 .hero .glowfloor{position:absolute;left:50%;bottom:-20vh;width:70vw;height:40vh;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(238,51,88,.35),transparent);pointer-events:none}
@@ -126,11 +126,10 @@ nav .lk a:hover{color:#fff}
  .name .nm{font-size:22.5vw;line-height:.82}
  .name .studio{font-size:13px;letter-spacing:.8em;padding-left:.8em;padding-right:0;text-align:center;margin-top:8px}
  .fig{position:relative;left:auto;bottom:auto;height:auto;transform:none!important;margin-top:-6vw;display:flex;justify-content:center;z-index:2}
- .fig img{height:min(60vh,120vw);width:auto;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
+ .fig img{height:min(62vh,124vw);width:auto}
  .hero .glowfloor{bottom:auto;top:55%}
- .band{position:relative;left:auto;right:auto;bottom:auto;top:auto;margin-top:-34px;background:none;border:0;font-size:clamp(28px,9vw,40px);line-height:1.05;padding:0 16px;letter-spacing:.04em}
- .band b{display:block}
- .hero .bottom{position:relative;bottom:auto;padding:18px 0 34px}
+ .band{position:relative;left:auto;right:auto;bottom:auto;top:auto;margin-top:-76px;font-size:clamp(19px,6vw,26px);padding:14px 10px;letter-spacing:.06em}
+ .hero .bottom{position:relative;bottom:auto;padding:26px 0 34px}
  .hero .bottom .wrap{flex-direction:column;align-items:stretch;gap:18px}
  .hero .lead{max-width:none;font-size:18px;text-align:center;background:none;padding:0;text-shadow:none}
  .hero .ctas{justify-content:stretch;margin-right:0}.hero .ctas .btn{flex:1 1 100%;min-width:0}
@@ -316,6 +315,32 @@ nav .lk a:hover{color:#fff}
 .step p{color:var(--soft);padding-top:18px;max-width:40ch}
 @media(max-width:760px){.step{grid-template-columns:60px 1fr}.step .n{width:60px;height:60px}.steps .line{left:29px}.step p{grid-column:2;padding-top:0}}
 
+
+/* ---------- coding effects ---------- */
+.term{position:absolute;left:max(32px,calc((100vw - 1280px)/2 + 32px));top:46%;z-index:3;display:flex;align-items:center;gap:6px;font:500 13px/1 "Courier New",monospace;color:#ffd9de;background:rgba(22,7,5,.75);padding:10px 14px;border-radius:10px;box-shadow:inset 0 0 0 1px rgba(255,154,168,.3),0 0 20px rgba(216,38,74,.25)}
+.term i{width:7px;height:7px;border-radius:50%;background:#5a2a22}.term i:first-child{background:var(--cherry)}
+.term code{margin-left:6px;white-space:pre}
+.caret{display:inline-block;width:.55em;height:1em;background:currentColor;margin-left:3px;vertical-align:-.12em;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+@media(max-width:860px){.term{display:none}}
+.burst{height:220vh;position:relative}
+.bpin{position:sticky;top:0;height:100vh;display:grid;place-items:center;overflow:hidden}
+.tw{position:relative;z-index:3;margin:0;padding:22px 34px;background:rgba(22,7,5,.72);backdrop-filter:blur(6px);border-radius:20px;text-align:center;font:400 clamp(30px,4.6vw,72px)/1.15 var(--cond);text-transform:uppercase}
+.tw mark{background:var(--cherry);color:#fff;padding:0 .2em;border-radius:.12em;box-shadow:0 0 26px rgba(216,38,74,.7);white-space:nowrap}
+.tw mark:empty{padding:0}
+.shots img{position:absolute;left:50%;top:50%;width:min(340px,26vw);border-radius:14px;box-shadow:0 30px 60px -20px #000,0 0 0 1px var(--line);transform:translate(-50%,-50%) translate(calc(var(--x) * var(--p,0)),calc(var(--y) * var(--p,0))) rotate(calc(var(--r) * var(--p,0))) scale(calc(.3 + .7 * var(--p,0)));opacity:var(--p,0);will-change:transform}
+.shots img:nth-child(odd){width:min(280px,21vw)}
+@media(max-width:860px){.burst{height:180vh}.shots img{width:40vw;margin-left:calc(var(--x) * -.15)}.shots img:nth-child(odd){width:34vw}.tw{background:rgba(22,7,5,.75);padding:18px 14px;border-radius:16px;margin:0 14px}}
+.pgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.editor{position:sticky;top:110px;border-radius:16px;background:#0e0403;box-shadow:inset 0 0 0 1px rgba(255,154,168,.22),0 30px 80px -30px #000,0 0 40px rgba(216,38,74,.15);overflow:hidden}
+.ebar{display:flex;align-items:center;gap:6px;padding:12px 14px;background:#1c0806;border-bottom:1px solid var(--line)}
+.ebar i{width:10px;height:10px;border-radius:50%;background:#5a2a22}.ebar i:first-child{background:var(--cherry)}
+.ebar span{margin-left:10px;font:500 12px "Courier New",monospace;color:var(--faint)}
+.editor pre{margin:0;padding:18px 20px;min-height:300px;font:500 14px/1.7 "Courier New",monospace;color:#f3dcd2;white-space:pre-wrap}
+.editor .k{color:#ff8597}.editor .s{color:var(--caramel)}.editor .c{color:rgba(247,232,218,.4)}
+@media(max-width:960px){.pgrid{grid-template-columns:1fr}.editor{position:relative;top:0;order:-1}.editor pre{min-height:150px;font-size:12px;padding:12px 14px}}
+.scr{color:#ff8597}
+
 /* ---------- about ---------- */
 .about .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);align-items:center}
 .about .pic{grid-column:1/6;position:relative}
@@ -359,7 +384,7 @@ footer a:hover{color:#fff}
 
 .prog{position:fixed;left:0;top:0;height:3px;z-index:60;width:0;background:var(--cherry);box-shadow:0 0 10px var(--glow)}
 
-@media (prefers-reduced-motion:reduce){.codes span{animation:none!important;opacity:.45!important}*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1!important;transform:none!important}}
+@media (prefers-reduced-motion:reduce){.burst{height:auto}.bpin{position:relative;height:auto;padding:100px 0}.shots{display:none}.codes span{animation:none!important;opacity:.45!important}*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -382,7 +407,8 @@ footer a:hover{color:#fff}
 <header class="hero" id="top">
  <div class="name" aria-hidden="true"><div class="nm"><span class="l">Mur</span><span class="r">zilka</span></div><div class="studio">studio</div></div>
  <div class="glowfloor" aria-hidden="true"></div>
- <div class="codes" aria-hidden="true"><span style="left:6%;top:30%;--d:0.0s;--t:14s">&lt;/&gt;</span><span style="left:78%;top:24%;--d:1.3s;--t:21s">{ booking }</span><span style="left:12%;top:52%;--d:2.6s;--t:16s">=SUM(B2:B9)</span><span style="left:70%;top:46%;--d:3.9s;--t:23s">price = base + crm</span><span style="left:4%;top:72%;--d:5.2s;--t:18s">&lt;div class="hero"&gt;</span><span style="left:80%;top:66%;--d:6.5s;--t:25s">@media (max-width)</span><span style="left:18%;top:38%;--d:7.8s;--t:20s">fetch("/api/book")</span><span style="left:66%;top:32%;--d:0.1s;--t:15s">wa.me/?text=</span><span style="left:8%;top:86%;--d:1.4s;--t:22s">if (guest) book()</span><span style="left:74%;top:82%;--d:2.7s;--t:17s">SELECT * FROM rooms</span><span style="left:24%;top:64%;--d:4.0s;--t:24s">.btn:hover</span><span style="left:62%;top:58%;--d:5.3s;--t:19s">[ RU · EN · KA ]</span><span style="left:84%;top:40%;--d:6.6s;--t:14s">0% commission</span><span style="left:14%;top:20%;--d:7.9s;--t:21s">new Date()</span><span style="left:56%;top:74%;--d:0.2s;--t:16s">&lt;form&gt;</span><span style="left:30%;top:84%;--d:1.5s;--t:23s">#9E1B3A</span><span style="left:88%;top:56%;--d:2.8s;--t:18s">display: grid</span><span style="left:2%;top:44%;--d:4.1s;--t:25s">✓ paid</span><span style="left:40%;top:90%;--d:5.4s;--t:20s">return site;</span><span style="left:60%;top:18%;--d:6.7s;--t:15s">=COUNTIF(C:C,"New")</span></div>
+ <div class="term" aria-hidden="true"><i></i><i></i><i></i><code id="term"></code><b class="caret"></b></div>
+ <div class="codes" aria-hidden="true"><span style="left:6%;top:30%;--d:0.0s;--t:14s">&lt;/&gt;</span><span style="left:78%;top:24%;--d:1.3s;--t:21s">{ booking }</span><span style="left:12%;top:52%;--d:2.6s;--t:16s">=SUM(B2:B9)</span><span style="left:70%;top:46%;--d:3.9s;--t:23s">price = base + crm</span><span style="left:4%;top:72%;--d:5.2s;--t:18s">&lt;div class="hero"&gt;</span><span style="left:80%;top:66%;--d:6.5s;--t:25s">@media (max-width)</span><span style="left:18%;top:38%;--d:7.8s;--t:20s">fetch("/api/book")</span><span style="left:66%;top:32%;--d:0.1s;--t:15s">wa.me/?text=</span><span style="left:8%;top:86%;--d:1.4s;--t:22s">if (guest) book()</span><span style="left:74%;top:82%;--d:2.7s;--t:17s">SELECT * FROM rooms</span><span style="left:24%;top:64%;--d:4.0s;--t:24s">.btn:hover</span><span style="left:62%;top:58%;--d:5.3s;--t:19s">[ RU · EN · KA ]</span><span style="left:84%;top:40%;--d:6.6s;--t:14s">0% commission</span><span style="left:14%;top:20%;--d:7.9s;--t:21s">new Date()</span><span style="left:56%;top:74%;--d:0.2s;--t:16s">&lt;form&gt;</span><span style="left:30%;top:84%;--d:1.5s;--t:23s">#9E1B3A</span><span style="left:88%;top:56%;--d:2.8s;--t:18s">display: grid</span><span style="left:2%;top:44%;--d:4.1s;--t:25s">✓ paid</span><span style="left:40%;top:90%;--d:5.4s;--t:20s">return site;</span><span style="left:60%;top:18%;--d:6.7s;--t:15s">=COUNTIF(C:C,"New")</span><span style="left:46%;top:12%;--d:0.6s;--t:12s">git push origin main</span><span style="left:90%;top:14%;--d:2.3s;--t:17s">200 OK</span><span style="left:36%;top:26%;--d:4.0s;--t:22s">&lt;h1&gt;MURZILKA&lt;/h1&gt;</span><span style="left:52%;top:88%;--d:5.7s;--t:16s">const crm = new Sheet()</span><span style="left:92%;top:30%;--d:7.4s;--t:21s">transition: .4s</span><span style="left:26%;top:50%;--d:9.1s;--t:15s">async function send()</span><span style="left:90%;top:76%;--d:0.8s;--t:20s">✓ deployed</span><span style="left:48%;top:40%;--d:2.5s;--t:14s">{ lang: "ka" }</span><span style="left:4%;top:58%;--d:4.2s;--t:19s">&lt;img loading="lazy"&gt;</span><span style="left:68%;top:92%;--d:5.9s;--t:13s">grid-template-columns</span><span style="left:34%;top:72%;--d:7.6s;--t:18s">onclick="book()"</span><span style="left:94%;top:90%;--d:9.3s;--t:12s">Telegram.sendMessage()</span></div>
  <div class="fig" id="fig"><img src="img/sasha-cut.webp" alt="" width="833" height="1254"></div>
  <h1 class="band"><span class="vh">Sasha Murzilka — </span><span data-ru="сайты, которые <b>продают</b>" data-en="websites that <b>sell</b>">сайты, которые <b>продают</b></span></h1>
  <div class="bottom"><div class="wrap">
@@ -449,6 +475,13 @@ footer a:hover{color:#fff}
  </div>
 </section>
 
+<section class="burst" id="burst">
+ <div class="bpin">
+  <div class="shots" aria-hidden="true"><img src="img/hotel.webp" alt="" loading="lazy" style="--x:-30vw;--y:-26vh;--r:-6deg"><img src="img/booking.webp" alt="" loading="lazy" style="--x:30vw;--y:-27vh;--r:5deg"><img src="img/groups.webp" alt="" loading="lazy" style="--x:-31vw;--y:24vh;--r:4deg"><img src="img/menu.webp" alt="" loading="lazy" style="--x:31vw;--y:25vh;--r:-5deg"><img src="img/tours.webp" alt="" loading="lazy" style="--x:-4vw;--y:-33vh;--r:3deg"><img src="img/doors.webp" alt="" loading="lazy" style="--x:6vw;--y:32vh;--r:-3deg"><img src="img/avatar-night.webp" alt="" loading="lazy" style="--x:-40vw;--y:-1vh;--r:-8deg"></div>
+  <h2 class="tw"><span data-ru="Я соберу для вас" data-en="I will build you">Я соберу для вас</span> <mark id="twword"></mark><b class="caret"></b></h2>
+ </div>
+</section>
+
 <section class="work" id="work">
  <div class="wrap top">
   <h2 class="big rv" data-ru="Живые <span class='it'>проекты</span>" data-en="Live <span class='it'>projects</span>">Живые <span class="it">проекты</span></h2>
@@ -468,9 +501,11 @@ footer a:hover{color:#fff}
 <section class="sec" id="process">
  <div class="wrap">
   <div class="head"><h2 class="big rv" data-ru="От первого сообщения <span class='it'>до запуска</span>" data-en="From first message <span class='it'>to launch</span>">От первого сообщения <span class="it">до запуска</span></h2></div>
-  <div class="steps" id="steps">
+  <div class="pgrid"><div class="steps" id="steps">
    <div class="line"><i id="sline"></i></div>
    <div class="step"><div class="n">01</div><h3 data-ru="Обсуждение" data-en="Discussion">Обсуждение</h3><p data-ru="Расскажите о бизнесе и задачах сайта. Вместе определим нужные страницы и функции." data-en="Tell me about your business and what the site should do. Together we decide on the pages and features.">Расскажите о бизнесе и задачах сайта. Вместе определим нужные страницы и функции.</p></div><div class="step"><div class="n">02</div><h3 data-ru="Стоимость и сроки" data-en="Price and deadline">Стоимость и сроки</h3><p data-ru="Зафиксируем состав работ, сроки и цену до начала проекта." data-en="We agree the scope, deadline and price before the project starts.">Зафиксируем состав работ, сроки и цену до начала проекта.</p></div><div class="step"><div class="n">03</div><h3 data-ru="Разработка" data-en="Development">Разработка</h3><p data-ru="Покажу сайт в процессе работы, чтобы вы могли вовремя внести правки." data-en="You see the site as it is built, so you can request changes in time.">Покажу сайт в процессе работы, чтобы вы могли вовремя внести правки.</p></div><div class="step"><div class="n">04</div><h3 data-ru="Запуск" data-en="Launch">Запуск</h3><p data-ru="Передам сайт, домен, файлы и доступы. Всё будет принадлежать вам." data-en="I hand over the site, domain, files and logins. Everything belongs to you.">Передам сайт, домен, файлы и доступы. Всё будет принадлежать вам.</p></div>
+  </div>
+  <div class="editor" aria-hidden="true"><div class="ebar"><i></i><i></i><i></i><span id="efile">brief.md</span></div><pre id="ecode"></pre></div>
   </div>
  </div>
 </section>
@@ -682,7 +717,7 @@ function onScroll(){
  var h=document.documentElement;$('prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
  var sr=$('steps').getBoundingClientRect(),sp=Math.min(1,Math.max(0,(innerHeight*.6-sr.top)/sr.height));
  $('sline').style.height=(sp*100)+'%';
- steps.forEach(function(s){s.classList.toggle('lit',s.getBoundingClientRect().top<innerHeight*.6)});
+ var act=0;steps.forEach(function(s,i){var on=s.getBoundingClientRect().top<innerHeight*.6;s.classList.toggle('lit',on);if(on)act=i});window.__typeCode&&window.__typeCode(act);
 }
 addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
 
@@ -709,6 +744,41 @@ document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.targe
  var text=a.classList.contains('calc')&&window.CALC_MSG?window.CALC_MSG:baseMsg();
  try{navigator.clipboard.writeText(text)}catch(e){}
  toast(LANG==='ru'?'Текст сообщения скопирован — вставьте его в чат Telegram':'Message copied — paste it into the Telegram chat')});
+
+
+/* ---------- coding effects ---------- */
+(function(){
+ var lines=['npm run build murzilka','git push origin main','✓ deployed · 0.8s','book({room:101, nights:3})','crm.add(lead) ✓'],li=0,ci=0,del=false,t=$('term');
+ function tt(){if(!t)return;var w=lines[li];if(!del){ci++;t.textContent='> '+w.slice(0,ci);if(ci>=w.length){del=true;return setTimeout(tt,1600)}}else{ci-=2;if(ci<=0){ci=0;del=false;li=(li+1)%lines.length}t.textContent='> '+w.slice(0,Math.max(0,ci))}setTimeout(tt,del?25:65)}
+ if(!RM)tt();else if(t)t.textContent='> '+lines[2];
+ // typewriter words
+ var W={ru:['сайт отеля','онлайн-меню','лендинг под рекламу','бронирование','CRM для заявок','что угодно'],en:['a hotel website','an online menu','an ad landing page','direct booking','a CRM for leads','anything']},wi=0,wc=0,wd=false,m=$('twword');
+ function tw(){var list=W[LANG],w=list[wi%list.length];if(!wd){wc++;m.textContent=w.slice(0,wc);if(wc>=w.length){wd=true;return setTimeout(tw,1500)}}else{wc--;m.textContent=w.slice(0,wc);if(wc<=0){wd=false;wi++}}setTimeout(tw,wd?35:80)}
+ if(!RM)tw();else m.textContent=W[LANG][5];
+ // burst on scroll
+ var bs=$('burst'),imgs=bs.querySelectorAll('.shots img');
+ function burst(){var r=bs.getBoundingClientRect(),tot=bs.offsetHeight-innerHeight,p=Math.min(1,Math.max(0,(-r.top+innerHeight*.3)/(tot*.75)));
+  imgs.forEach(function(im,i){var q=Math.min(1,Math.max(0,p*1.25-i*.04));im.style.setProperty('--p',q.toFixed(3))})}
+ if(!RM){addEventListener('scroll',burst,{passive:true});burst()}
+ // editor typing per step
+ var CODE={ru:[['brief.md','<span class="c"># Бриф</span>\nбизнес: <span class="s">"бутик-отель"</span>\nцель:   <span class="s">"больше прямых броней"</span>\nстраницы: [<span class="s">главная</span>, <span class="s">номера</span>, <span class="s">бронь</span>]\nязыки: [<span class="s">RU</span>, <span class="s">EN</span>, <span class="s">KA</span>]'],
+  ['offer.json','{\n  <span class="k">"формат"</span>: <span class="s">"многостраничный"</span>,\n  <span class="k">"функции"</span>: [<span class="s">"бронь"</span>, <span class="s">"CRM"</span>],\n  <span class="k">"срок"</span>: <span class="s">"10 дней"</span>,\n  <span class="k">"цена"</span>: <span class="s">"$550"</span>  <span class="c">// фиксируем</span>\n}'],
+  ['index.html','<span class="k">&lt;section</span> class=<span class="s">"hero"</span><span class="k">&gt;</span>\n  <span class="k">&lt;h1&gt;</span>Бутик-отель<span class="k">&lt;/h1&gt;</span>\n  <span class="k">&lt;button</span> onclick=<span class="s">"book()"</span><span class="k">&gt;</span>\n    Забронировать\n  <span class="k">&lt;/button&gt;</span>\n<span class="k">&lt;/section&gt;</span>'],
+  ['deploy.sh','<span class="c">$</span> git push origin main\n<span class="c">$</span> connect domain <span class="s">your-hotel.ge</span>\n<span class="k">✓</span> сайт запущен\n<span class="k">✓</span> доступы переданы владельцу\n<span class="k">✓</span> аналитика подключена']]};
+ CODE.en=CODE.ru;
+ var pre=$('ecode'),ef=$('efile'),cur=-1,timer;
+ function typeCode(i){if(i===cur)return;cur=i;clearTimeout(timer);var c=CODE[LANG][i];ef.textContent=c[0];var h=c[1],n=0;
+  if(RM){pre.innerHTML=h;return}
+  (function step(){n+=3;while(n<h.length&&(h[n-1]==='<'||/<[^>]*$/.test(h.slice(0,n))||/&[a-z]*$/.test(h.slice(0,n))))n++;pre.innerHTML=h.slice(0,n)+'<b class="caret"></b>';if(n<h.length)timer=setTimeout(step,22)})()}
+ window.__typeCode=typeCode;typeCode(0);
+ // scramble headings on reveal
+ var CH='01<>/{}=#$*+ABCDEFXZ';
+ function scramble(el){if(RM||el.dataset.sc)return;el.dataset.sc=1;var nodes=[],w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);while(w.nextNode())nodes.push(w.currentNode);
+  var orig=nodes.map(function(n){return n.nodeValue}),f=0,tot=18;
+  (function go(){f++;nodes.forEach(function(n,i){var o=orig[i],k=Math.floor(o.length*f/tot);n.nodeValue=o.slice(0,k)+o.slice(k).replace(/\S/g,function(){return CH[Math.random()*CH.length|0]})});if(f<tot)setTimeout(go,40);else nodes.forEach(function(n,i){n.nodeValue=orig[i]})})()}
+ var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){scramble(e.target);io2.unobserve(e.target)}})},{threshold:.4});
+ document.querySelectorAll('.big').forEach(function(e){io2.observe(e)});
+})();
 
 $('copy').onclick=function(){var b=this;try{navigator.clipboard.writeText('+995555546937').then(function(){b.textContent=LANG==='ru'?'Номер скопирован':'Number copied';setTimeout(function(){b.textContent='+995 555 546 937'},1800)},function(){})}catch(e){}track('copy_number')};
 
