@@ -5,13 +5,27 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Murzilka web design — сайты, которые продают</title>
 <meta name="description" content="Мурзилка веб дизайн: сайты для отелей, кафе, туров и услуг в Грузии. Бронирование без комиссий, заявки в WhatsApp, своя CRM.">
-<link rel="icon" href="data:,">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%237A1027'/%3E%3Cpath fill='%23F1DCD8' d='M20 6c.9 7 2.5 10 5.2 11.4C22.5 18.6 21 21.6 20 28c-1-6.4-2.5-9.4-5.2-10.6C17.5 16 19.1 13 20 6Z'/%3E%3Cpath fill='%23F1DCD8' d='M6 20c7-.9 10-2.5 11.4-5.2C18.6 17.5 21.6 19 28 20c-6.4 1-9.4 2.5-10.6 5.2C16 22.5 13 20.9 6 20Z' opacity='.85'/%3E%3C/svg%3E">
+<!--HEAD-->
+<link rel="canonical" href="https://peresheina3001-crypto.github.io/murzilka/new/">
+<link rel="alternate" hreflang="ru" href="https://peresheina3001-crypto.github.io/murzilka/new/">
+<link rel="alternate" hreflang="en" href="https://peresheina3001-crypto.github.io/murzilka/new/en.html">
+<link rel="alternate" hreflang="ka" href="https://peresheina3001-crypto.github.io/murzilka/new/ka.html">
+<link rel="alternate" hreflang="x-default" href="https://peresheina3001-crypto.github.io/murzilka/new/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Murzilka web design">
 <meta property="og:title" content="Murzilka web design — сайты, которые продают">
-<meta property="og:description" content="Сайты для отелей, кафе, туров и услуг в Грузии. Бронирование без комиссий, заявки в WhatsApp, своя CRM.">
-<meta property="og:image" content="https://peresheina3001-crypto.github.io/murzilka/new/og.jpg">
+<meta property="og:description" content="Мурзилка веб дизайн: сайты для отелей, кафе, туров и услуг в Грузии. Бронирование без комиссий, заявки в WhatsApp, своя CRM.">
+<meta property="og:image" content="https://peresheina3001-crypto.github.io/murzilka/new/og-ru.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://peresheina3001-crypto.github.io/murzilka/new/">
+<meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://peresheina3001-crypto.github.io/murzilka/new/og-ru.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Murzilka web design", "url": "https://peresheina3001-crypto.github.io/murzilka/new/", "image": "https://peresheina3001-crypto.github.io/murzilka/new/og-ru.jpg", "description": "Мурзилка веб дизайн: сайты для отелей, кафе, туров и услуг в Грузии. Бронирование без комиссий, заявки в WhatsApp, своя CRM.", "telephone": "+995555546937", "areaServed": {"@type": "Country", "name": "Georgia"}, "priceRange": "$$", "sameAs": ["https://t.me/murzilka_studio", "https://wa.me/995555546937"], "knowsLanguage": ["ru", "en", "ka"]}</script>
+<!--/HEAD-->
+<script src="data.js"></script>
 <link rel="stylesheet" href="fonts.css">
 <style>
 /*
@@ -67,9 +81,15 @@ button{font:inherit;color:inherit;cursor:pointer}
 .logo{display:flex;align-items:center;gap:8px;font:800 17px/1 'Unbounded',sans-serif;text-decoration:none;letter-spacing:-.02em}
 .logo .star{width:22px;height:22px}
 .logo small{font:500 11px/1 'Onest',sans-serif;letter-spacing:.02em;opacity:.6;margin-left:2px;align-self:flex-end;padding-bottom:1px}
-.lang{display:grid;place-items:center;min-width:44px;height:40px;padding:0 10px;border-radius:99px;border:1.5px solid rgba(23,11,14,.15);font:700 13px/1 'Onest',sans-serif;text-decoration:none;color:inherit}
+.langs{display:flex;height:40px;padding:3px;border-radius:99px;border:1.5px solid rgba(23,11,14,.15)}
+.langs a{display:grid;place-items:center;min-width:34px;padding:0 6px;border-radius:99px;font:700 12px/1 'Onest',sans-serif;text-decoration:none;color:inherit;opacity:.6}
+.langs a:hover{opacity:1}
+.langs a.on{background:var(--ink);color:var(--paper);opacity:1}
+.logo small{white-space:nowrap}
+.mlangs{display:none}
+@media(max-width:560px){.nr .langs{display:none}.menu .mlangs{display:flex;align-self:flex-start;height:48px;border-color:rgba(255,255,255,.3);margin-top:10px}.menu .mlangs a{font-size:15px;min-width:52px;color:#fff;opacity:.7}.menu .mlangs a.on{background:#fff;color:var(--ink);opacity:1}}
 .nr{display:flex;align-items:center;gap:8px}
-.lang:hover{background:rgba(23,11,14,.06)}
+
 .nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
 .nav ul a{display:block;padding:10px 14px;border-radius:999px;text-decoration:none;font-size:15px;transition:background .2s}
 .nav ul a:hover{background:rgba(122,16,39,.08)}
@@ -295,7 +315,7 @@ section{position:relative}
 .mu-biz{display:grid;gap:9px;font-size:13px}
 .mu-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .mu-row span:first-child{font-weight:600}
-.mu-langs{display:flex;gap:4px}.mu-langs em{font-style:normal;font-size:11px;font-weight:700;padding:4px 7px;border-radius:7px;background:#f4eaea;color:var(--accent)}
+.mu-langs{display:flex;gap:4px}.mu-langs em{font-style:normal;font-size:12px;font-weight:700;padding:4px 7px;border-radius:7px;background:#f4eaea;color:var(--accent)}
 .mu-langs em.on{background:var(--accent);color:#fff}.mu-langs .pl{background:none;border:1.5px dashed #e0c9ca}
 .mu-sw{flex:none;position:relative;width:34px;height:20px;border-radius:99px;background:#e6dada;transition:background .3s}
 .mu-sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .3s}
@@ -311,16 +331,16 @@ section{position:relative}
 .fc.on .mu-type{animation:muType 1.4s steps(15) .3s forwards,muBlink .8s step-end infinite}
 @keyframes muType{to{width:15ch}}@keyframes muBlink{50%{border-color:transparent}}
 .mu-res{opacity:0;transform:translateY(8px)}.fc.on .mu-res{animation:muIn .5s 1.8s both}
-.mu-res small{display:block;font-size:10px;color:var(--mute)}.mu-res b{font-size:13px;color:var(--accent)}
+.mu-res small{display:block;font-size:12px;color:var(--mute)}.mu-res b{font-size:13px;color:var(--accent)}
 .mu-chart{display:flex;align-items:flex-end;gap:5px;height:40px}
 .mu-chart i{flex:1;height:var(--h);border-radius:4px 4px 1px 1px;background:linear-gradient(var(--accent-2),var(--accent));transform-origin:50% 100%;transform:scaleY(0)}
 .fc.on .mu-chart i{animation:muGrow .6s cubic-bezier(.2,.8,.2,1) both}
 .fc.on .mu-chart i:nth-child(1){animation-delay:2s}.fc.on .mu-chart i:nth-child(2){animation-delay:2.08s}.fc.on .mu-chart i:nth-child(3){animation-delay:2.16s}.fc.on .mu-chart i:nth-child(4){animation-delay:2.24s}.fc.on .mu-chart i:nth-child(5){animation-delay:2.32s}.fc.on .mu-chart i:nth-child(6){animation-delay:2.4s}.fc.on .mu-chart i:nth-child(7){animation-delay:2.48s}
 @keyframes muGrow{to{transform:scaleY(1)}}
-.mu-an{display:flex;gap:6px;font-size:10px;font-weight:600;color:var(--mute)}.mu-an span{padding:3px 7px;border-radius:6px;background:#f4eaea}
+.mu-an{display:flex;gap:6px;font-size:12px;font-weight:600;color:var(--mute)}.mu-an span{padding:3px 7px;border-radius:6px;background:#f4eaea}
 @keyframes muIn{to{opacity:1;transform:none}}
 /* 4 admin */
-.mu-adm small{display:block;font-size:11px;color:var(--mute);margin-bottom:6px}
+.mu-adm small{display:block;font-size:12px;color:var(--mute);margin-bottom:6px}
 .mu-in{position:relative;height:38px;border:1.5px solid #e6dada;border-radius:10px;font-weight:700;font-size:15px;overflow:hidden}
 .mu-in span{position:absolute;left:12px;top:50%;transform:translateY(-50%)}
 .mu-in .v2{opacity:0}
@@ -426,7 +446,16 @@ section{position:relative}
 .cta .btns{display:flex;gap:10px;flex-wrap:wrap}
 .cta .btn{min-height:64px;padding:0 32px;font-size:17px}
 .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:clamp(36px,5vw,70px);padding-top:20px;border-top:1px solid rgba(255,255,255,.2);font-size:14px;opacity:.85}
-.foot a{text-decoration:none}
+.faq{background:var(--paper);padding-top:0}
+.qa{margin-top:clamp(24px,3vw,44px);display:grid;gap:10px;max-width:900px}
+.qa details{background:#fff;border-radius:20px;box-shadow:0 1px 0 var(--line)}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font:700 clamp(16px,1.4vw,19px)/1.3 'Unbounded',sans-serif}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--blush);color:var(--accent);font:600 20px/1 'Onest';transition:transform .3s}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa p{padding:0 24px 22px;color:var(--mute);max-width:720px}
+.foot a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+.foot>span{display:inline-flex;align-items:center;min-height:44px}
 
 /* mobile bar */
 .mbar{position:fixed;z-index:40;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));display:none;gap:8px;padding:8px;border-radius:999px;background:rgba(23,11,14,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transform:translateY(160%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
@@ -517,11 +546,12 @@ section{position:relative}
     <li><a href="#works">Работы</a></li>
     <li><a href="#process">Как работаю</a></li>
   </ul>
-  <div class="nr"><a class="lang" href="en.html" hreflang="en" lang="en">EN</a><a class="btn btn-main mag" href="https://wa.me/995555546937" data-cur="Написать"><span><svg><use href="#wa"/></svg>Написать</span></a>
+  <div class="nr"><span class="langs"><a class="on" href="index.html" hreflang="ru" lang="ru">RU</a><a href="en.html" hreflang="en" lang="en">EN</a><a href="ka.html" hreflang="ka" lang="ka">KA</a></span><a class="btn btn-main mag" href="https://wa.me/995555546937" data-cur="Написать"><span><svg><use href="#wa"/></svg>Написать</span></a>
   <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i></button></div>
 </nav>
 <div class="menu" id="menu">
   <a href="#about">Обо мне</a><a href="#calc">Цена</a><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#process">Как работаю</a>
+  <span class="langs mlangs"><a class="on" href="index.html" hreflang="ru" lang="ru">RU</a><a href="en.html" hreflang="en" lang="en">EN</a><a href="ka.html" hreflang="ka" lang="ka">KA</a></span>
   <div class="row"><a class="btn btn-light" href="https://wa.me/995555546937"><span><svg><use href="#wa"/></svg>WhatsApp</span></a><a class="btn btn-ghost" href="https://t.me/murzilka_studio"><span><svg><use href="#tg"/></svg>Telegram</span></a></div>
 </div>
 
@@ -559,7 +589,7 @@ section{position:relative}
     <div class="ftrack" id="ftrack" tabindex="0" aria-label="Что будет у вашего сайта, листайте вбок">
       <article class="fc"><div class="fimg mu"><div class="mu-dev"><div class="mu-tabs"><span class="t1">Ноутбук</span><span class="t2">Планшет</span><span class="t3">Телефон</span><i class="mu-ind"></i></div><div class="mu-stage"><div class="mu-page"><b></b><i class="l1"></i><i class="l2"></i><div class="mu-cols"><u></u><u></u><u></u></div></div></div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="3">3</b><span>экрана</span></div><h3>Адаптация под устройства</h3><p>Сайт будет удобно смотреть на телефоне, планшете и компьютере</p></div></article>
       <article class="fc"><div class="fimg mu"><div class="mu-box mu-biz"><div class="mu-row"><span>Языки</span><span class="mu-langs"><em class="on">RU</em><em>EN</em><em>KA</em><em class="pl">+3</em></span></div><div class="mu-row"><span>Онлайн-бронирование</span><i class="mu-sw s1"></i></div><div class="mu-row"><span>Меню и цены</span><i class="mu-sw s2"></i></div><div class="mu-row"><span>Кнопка WhatsApp</span><i class="mu-sw s3"></i></div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="6">6</b><span>языков на выбор</span></div><h3>Под ваш бизнес</h3><p>Подберу структуру, функции и языки с учётом ваших услуг и клиентов</p></div></article>
-      <article class="fc"><div class="fimg mu"><div class="mu-box mu-seo"><div class="mu-q"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="4.5"/><path d="m9.5 9.5 3.5 3.5"/></svg><span class="mu-type">отель в Тбилиси</span></div><div class="mu-res"><small>ваш-сайт.ge</small><b>Ваш сайт — первым в поиске</b></div><div class="mu-chart"><i style="--h:30%"></i><i style="--h:42%"></i><i style="--h:38%"></i><i style="--h:56%"></i><i style="--h:64%"></i><i style="--h:80%"></i><i style="--h:96%"></i></div><div class="mu-an"><span>Google Analytics</span><span>Яндекс Метрика</span></div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="2">2</b><span>системы аналитики: Google и Яндекс</span></div><h3>Быстрая загрузка и SEO-основа</h3><p>Подготовлю сайт к поисковому продвижению и позабочусь о комфортной загрузке страниц</p></div></article>
+      <article class="fc"><div class="fimg mu"><div class="mu-box mu-seo"><div class="mu-q"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="4.5"/><path d="m9.5 9.5 3.5 3.5"/></svg><span class="mu-type">отель в Тбилиси</span></div><div class="mu-res"><small>ваш-сайт.ge</small><b>Готов к продвижению в Google</b></div><div class="mu-chart"><i style="--h:30%"></i><i style="--h:42%"></i><i style="--h:38%"></i><i style="--h:56%"></i><i style="--h:64%"></i><i style="--h:80%"></i><i style="--h:96%"></i></div><div class="mu-an"><span>Google Analytics</span><span>Яндекс Метрика</span></div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="2">2</b><span>системы аналитики: Google и Яндекс</span></div><h3>Быстрая загрузка и SEO-основа</h3><p>Подготовлю сайт к поисковому продвижению и позабочусь о комфортной загрузке страниц</p></div></article>
       <article class="fc"><div class="fimg mu"><div class="mu-box mu-adm"><small>Номер 102 · цена за ночь</small><div class="mu-in"><span class="v1">540 ₾</span><span class="v2">560 ₾</span><i class="mu-car"></i></div><div class="mu-btn">Сохранить</div><div class="mu-ok">✓ Уже на сайте</div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="0">0</b><span>программистов, чтобы поменять цены и фото</span></div><h3>Понятное управление</h3><p>Покажу, как обновлять важную информацию самостоятельно</p></div></article>
       <article class="fc"><div class="fimg mu"><div class="mu-chat"><div class="mu-b c1">Как поменять фото на главной?</div><div class="mu-b me c2">Сейчас покажу, это 2 клика</div><div class="mu-b me mu-dots c3"><i></i><i></i><i></i></div></div></div><div class="ftx"><div class="fnum"><b class="fn">1:1</b><span>связь со мной напрямую в мессенджере</span></div><h3>Поддержка после запуска</h3><p>Помогу разобраться с сайтом и его основными функциями</p></div></article>
     </div>
@@ -574,7 +604,7 @@ section{position:relative}
     <div class="kicker"><svg class="star rot"><use href="#star"/></svg>Обо мне и почему со мной удобно</div>
     <h2 class="h2 split"><span class="ln"><span>Думаю как бизнес.</span></span><span class="ln"><span>Делаю как разработчик.</span></span></h2>
     <div class="mgrid">
-      <div class="ava" id="ava"><img src="img/avatar.webp" alt="Саша Мурзилка за работой" loading="lazy"></div>
+      <div class="ava" id="ava"><img src="img/avatar.webp" srcset="img/m/avatar.webp 600w, img/avatar.webp 1000w" sizes="(max-width:900px) 90vw, 40vw" alt="Саша Мурзилка за работой" loading="lazy"></div>
       <div>
         <p class="lead">Вашему бизнесу нужен сайт, который приводит клиентов.</p>
         <p class="big" id="bigText">Я создаю сайты, которые ясно показывают ценность вашего предложения и ведут посетителя к нужному действию: заявке, покупке или бронированию. Благодаря опыту в операционном управлении я понимаю, как устроен бизнес и что важно его клиентам. Поэтому каждый сайт начинается с правильных вопросов и строится вокруг вашей цели.</p>
@@ -628,9 +658,9 @@ section{position:relative}
           <h3>Сайт отеля с бронированием</h3>
           <p class="d">Гости смотрят свободные даты и цены и бронируют напрямую, без комиссии платформ за бронирование.</p>
           <ul><li>Календарь доступности и цен</li><li>Шахматка, гости и оплаты</li><li>Уведомления о бронированиях в Telegram</li></ul>
-          <div class="price"><small>от</small><b>$300</b></div>
+          <div class="price"><small>от</small><b data-p="hotel">$300</b></div>
         </div>
-        <div class="vis"><img src="img/booking.webp" alt="Бронирование номеров на сайте Checkpoint Hotel" loading="lazy"></div>
+        <div class="vis"><img src="img/booking.webp" srcset="img/m/booking.webp 1000w, img/booking.webp 1900w" sizes="(max-width:900px) 70vw, 60vw" alt="Бронирование номеров на сайте Checkpoint Hotel" loading="lazy"></div>
       </article>
       <article class="svc" style="--i:1">
         <div>
@@ -638,9 +668,9 @@ section{position:relative}
           <h3>Многостраничный сайт</h3>
           <p class="d">Для кафе, салона, студии или клиники. Продуманная структура поможет клиентам быстро найти нужную информацию и оставить заявку.</p>
           <ul><li>Услуги, меню, цены и галерея</li><li>Версии на нужных языках</li><li>Карта, отзывы и удобная навигация</li></ul>
-          <div class="price"><small>от</small><b>$300</b></div>
+          <div class="price"><small>от</small><b data-p="multi">$300</b></div>
         </div>
-        <div class="vis"><img src="img/menu.webp" alt="Онлайн-меню кафе" loading="lazy"></div>
+        <div class="vis"><img src="img/menu.webp" srcset="img/m/menu.webp 1000w, img/menu.webp 1900w" sizes="(max-width:900px) 70vw, 60vw" alt="Онлайн-меню кафе" loading="lazy"></div>
       </article>
       <article class="svc" style="--i:2">
         <div>
@@ -648,9 +678,9 @@ section{position:relative}
           <h3>Лендинг под рекламу</h3>
           <p class="d">Одна выразительная страница, которая знакомит с предложением и помогает превратить интерес в заявку.</p>
           <ul><li>Для тура, услуги или события</li><li>Форма заявки или переход в WhatsApp</li><li>Подключение аналитики Google и Яндекса</li></ul>
-          <div class="price"><small>от</small><b>$150</b></div>
+          <div class="price"><small>от</small><b data-p="landing">$150</b></div>
         </div>
-        <div class="vis"><img src="img/tours.webp" alt="Лендинг турагентства Mama Georgia" loading="lazy"></div>
+        <div class="vis"><img src="img/tours.webp" srcset="img/m/tours.webp 1000w, img/tours.webp 1900w" sizes="(max-width:900px) 70vw, 60vw" alt="Лендинг турагентства Mama Georgia" loading="lazy"></div>
       </article>
       <article class="svc" style="--i:3">
         <div>
@@ -658,7 +688,7 @@ section{position:relative}
           <h3>Собственная CRM для заявок</h3>
           <p class="d">Соберу заявки с сайта или из Instagram в одном месте, чтобы вам было проще следить за обращениями и не терять клиентов.</p>
           <ul><li>Статусы заявок и напоминания</li><li>Шаблоны ответов</li><li>Понятное управление</li></ul>
-          <div class="price"><small>от</small><b>$100</b></div>
+          <div class="price"><small>от</small><b data-p="crm">$100</b></div>
         </div>
         <div class="vis"><div class="crm" aria-label="Пример экрана CRM">
           <div class="hd"><span>Заявки · сегодня</span><span>3 новых</span></div>
@@ -707,6 +737,21 @@ section{position:relative}
 </section>
 
 <!-- CTA -->
+<!-- FAQ -->
+<section class="band faq" id="faq">
+  <div class="wrap">
+    <div class="kicker"><svg class="star rot"><use href="#star"/></svg>Частые вопросы</div>
+    <h2 class="h2 split"><span class="ln"><span>Вопросы и ответы</span></span></h2>
+    <div class="qa">
+      <details><summary>Сколько времени занимает сайт?</summary><p>Обычно 7–14 дней от первого сообщения до запуска. Точный срок зафиксируем до начала работы.</p></details>
+      <details><summary>Как формируется цена?</summary><p>Калькулятор выше даёт ориентир. После короткого разговора я называю точную цену, и мы фиксируем её до начала проекта.</p></details>
+      <details><summary>Кому принадлежат сайт и домен?</summary><p>Вам. Я передаю сайт, домен, файлы и все доступы.</p></details>
+      <details><summary>Смогу ли я сам менять цены и фото?</summary><p>Да. Я покажу, как обновлять важную информацию самостоятельно, программист для этого не нужен.</p></details>
+      <details><summary>На скольких языках может быть сайт?</summary><p>Один язык включён в цену, каждый следующий стоит +<span data-p="lang">$80</span>. Например, русский, английский и грузинский.</p></details>
+    </div>
+  </div>
+</section>
+
 <section class="cta" id="contact">
   <canvas id="fog2" aria-hidden="true"></canvas>
   <div class="wrap">
@@ -719,7 +764,7 @@ section{position:relative}
       </div>
     </div>
     <div class="foot">
-      <span>© Murzilka web design</span>
+      <span>© Murzilka web design · <a href="privacy.html">Политика конфиденциальности</a></span>
       <span>+995 555 546 937</span>
       <span><a href="https://wa.me/995555546937">WhatsApp</a> · <a href="https://t.me/murzilka_studio">Telegram</a></span>
     </div>
@@ -745,17 +790,11 @@ const MOB=()=>innerWidth<=700;
 const WA='https://wa.me/995555546937';
 
 /* ---------- projects ---------- */
-const WORKS=[
- {img:'hotel',href:'https://checkpointhotel.ge/',t:'Checkpoint Hotel',d:'Сайт бутик-отеля в Старом Тбилиси',li:['Три языка: русский, английский и грузинский','Отель, кафе, меню, турагентство и спецпредложения на одном сайте','Кнопка онлайн-бронирования всегда под рукой'],tags:['Отель','3 языка','Бронирование']},
- {img:'booking',href:'https://checkpointhotel.ge/hotel/book/',t:'Бронирование',d:'Своё бронирование без комиссий площадок',li:['Гость выбирает даты и количество гостей','Видит свободные номера и цены с завтраком и без','Оформляет бронь в 4 шага: даты, номер, данные, готово'],tags:['Без комиссий','Даты и цены','4 шага']},
- {img:'groups',href:'https://groups.checkpointhotel.ge/',t:'Калькулятор группы',d:'Номера загораются под размер группы',li:['Ползунок от 2 до 35 гостей и выбор ночей','Схема показывает, какие номера займёт группа','Сразу считает цену за ночь и за весь срок, запрос уходит в WhatsApp'],tags:['Группы','Калькулятор','WhatsApp']},
- {img:'doors',href:'https://groups.checkpointhotel.ge/#rooms',t:'Двери в номера',d:'Открываешь дверь и видишь номер',li:['Каждый номер спрятан за своей цветной дверью','Под дверью видно, сколько мест и есть ли диван','Нажимаешь, дверь открывается, внутри фото номера'],tags:['Интерактив','Номера']},
- {img:'tours',href:'https://mamageorgia.checkpointhotel.ge/',t:'Mama Georgia Tours',d:'Лендинг турагентства с ценами и видео',li:['Туры на 7 дней, поездки на 1 день и девичники','Цены и видео прямо на странице','Три языка и кнопка WhatsApp на каждом экране'],tags:['Туры','Лендинг','3 языка']},
- {img:'menu',href:'https://checkpointhotel.ge/menu/',t:'Онлайн-меню',d:'Меню кафе с фото и ценами',li:['Еда и напитки разложены по категориям','У каждого блюда фото, состав и цена','Часы работы и адрес кафе сразу наверху'],tags:['Кафе','Меню','3 языка']}
-];
+const LANG=document.documentElement.lang||'ru';
+const WORKS=MZ.works.map(w=>Object.assign({img:w.img,href:w.href},w[LANG]||w.ru));
 const pad=n=>String(n).padStart(2,'0');
 const wdHTML=(w,i)=>`<div class="n">Работа ${pad(i+1)} из ${pad(WORKS.length)}</div><h3>${w.t}</h3><p class="lead">${w.d}</p><ul>${w.li.map(x=>`<li>${x}</li>`).join('')}</ul><div class="tags">${w.tags.map(x=>`<span>${x}</span>`).join('')}</div><a class="btn btn-light" href="${w.href}" target="_blank" rel="noopener"><span>Открыть сайт ↗</span></a>`;
-$('#screen').innerHTML=WORKS.map((w,i)=>`<img src="img/${w.img}.webp" alt="${w.t}" style="${i?'clip-path:inset(100% 0 0 0)':''}${w.img==='doors'?';object-position:center':''}">`).join('');
+$('#screen').innerHTML=WORKS.map((w,i)=>`<img src="img/${w.img}.webp" srcset="img/m/${w.img}.webp 1000w, img/${w.img}.webp 1900w" sizes="(max-width:900px) 70vw, 60vw"${i?' loading="lazy"':''} alt="${w.t}" style="${i?'clip-path:inset(100% 0 0 0)':''}${w.img==='doors'?';object-position:center':''}">`).join('');
 $('#caps').innerHTML=WORKS.map((w,i)=>`<div class="cap wd${i?'':' on'}">${wdHTML(w,i)}</div>`).join('');
 $('#wlist').innerHTML='<div class="kicker" style="color:rgba(255,255,255,.7);margin:0"><svg class="star"><use href="#star"/></svg>Работы</div><h2 class="h2">Живые проекты</h2>'+WORKS.map((w,i)=>`<article class="wcard"><a class="shot" href="${w.href}" target="_blank" rel="noopener"><img src="img/${w.img}.webp" alt="${w.t}" loading="lazy" style="${w.img==='doors'?'object-position:center':''}"></a><div class="wd">${wdHTML(w,i)}</div></article>`).join('');
 $('#dots').innerHTML=WORKS.map((w,i)=>`<i class="${i?'':'on'}"></i>`).join('');
@@ -775,7 +814,8 @@ $('#marq').innerHTML=mrow+mrow+mrow;
 const bt=$('#bigText');bt.innerHTML=bt.textContent.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
 
 /* ---------- calculator ---------- */
-const PRICE={fmt:{land:150,multi:300,shop:450},feat:{book:150,msg:40,crm:100,pay:120,cat:60,rev:50,seo:80},lang:80};
+const PRICE={fmt:MZ.prices.formats,feat:MZ.prices.features,lang:MZ.prices.extraLanguage};
+$$('[data-p]').forEach(b=>{const v=b.dataset.p==='lang'?MZ.prices.extraLanguage:MZ.prices.cards[b.dataset.p];if(v!=null)b.textContent='$'+v});
 const SPH={
  hotel:{n:'Отель или апартаменты',rec:'multi',def:['book','msg'],book:'Бронирование номеров',cat:'Номера и цены'},
  cafe:{n:'Кафе или ресторан',rec:'multi',def:['cat','book'],book:'Бронирование столиков',cat:'Меню'},
@@ -790,7 +830,7 @@ const FT=[
  {k:'msg',n:'Заявки в WhatsApp или Telegram',d:'сразу приходят вам в мессенджер'},
  {k:'crm',n:'Собственная CRM',d:'все заявки, статусы и напоминания'},
  {k:'pay',n:'Онлайн-оплата',d:'предоплата или полная оплата на сайте'},
- {k:'lang',n:'Языковые версии',d:'один язык включён, каждый следующий +$80'},
+ {k:'lang',n:'Языковые версии',d:'один язык включён, каждый следующий +$'+MZ.prices.extraLanguage},
  {k:'cat',n:'Меню, услуги или каталог'},
  {k:'rev',n:'Отзывы, карта и галерея'},
  {k:'seo',n:'SEO и аналитика',d:'Google, Яндекс, цели и счётчики'}
@@ -821,13 +861,13 @@ function render(){
  FT.forEach(f=>{if(!st.f[f.k]||!st.sph)return;if(f.k==='book'&&!S.book)return;let n=fname(f);if(f.k==='lang')n+=` (${st.langs})`;
   items.push([n,incl(f.k)?'включено':'+$'+(f.k==='lang'?PRICE.lang*(st.langs-1):PRICE.feat[f.k])])});
  $('#sumList').innerHTML=items.map(i=>`<li><span>${i[0]}</span><span>${i[1]}</span></li>`).join('');
- $('#pnote').textContent=!st.sph?'Выберите сферу, и я подскажу формат':!st.fmt?'Теперь выберите формат сайта':'Точную цену назову после короткого разговора';
+ $('#pnote').textContent=!st.sph?'Выберите сферу, и я подскажу формат':!st.fmt?'Теперь выберите формат сайта':'Это цена вместе с выбранными функциями, в карточках услуг указана стартовая. Точную назову после короткого разговора';
  if($('#langn'))$('#langn').textContent=st.langs+' '+(st.langs<5?'языка':'языков');
- const feats=items.slice(1).map(i=>i[0].toLowerCase());
- const msg='Здравствуйте, Саша! Сфера: '+(S?S.n.toLowerCase():'—')+'. Формат: '+(st.fmt?FMT[st.fmt].n.toLowerCase():'—')+(feats.length?'. Функции: '+feats.join(', '):'')+'. Ориентир из калькулятора: $'+p+'.';
+ const feats=items.slice(1).map(i=>i[0]);
+ const msg='Здравствуйте, Саша! Сфера: '+(S?S.n:'—')+'. Формат: '+(st.fmt?FMT[st.fmt].n:'—')+(feats.length?'. Функции: '+feats.join(', '):'')+'. Ориентир из калькулятора: $'+p+'.';
  $('#send').href=WA+'?text='+encodeURIComponent(msg);
 }
-$('#spheres').addEventListener('click',e=>{const b=e.target.closest('[data-s]');if(!b)return;const first=!st.sph;st.sph=b.dataset.s;st.f={};SPH[st.sph].def.forEach(k=>st.f[k]=true);if(first||!st.fmt)st.fmt=SPH[st.sph].rec;build()});
+$('#spheres').addEventListener('click',e=>{const b=e.target.closest('[data-s]');if(!b)return;if(b.dataset.s===st.sph)return;const first=!st.sph;st.sph=b.dataset.s;if(first)SPH[st.sph].def.forEach(k=>st.f[k]=true);if(first||!st.fmt)st.fmt=SPH[st.sph].rec;build()});
 $('#formats').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;st.fmt=b.dataset.f;build()});
 $('#feats').addEventListener('click',e=>{const l=e.target.closest('[data-l]');if(l){st.langs=Math.max(2,Math.min(6,st.langs+(+l.dataset.l)));render();return}
  const b=e.target.closest('[data-o]');if(!b||b.disabled)return;const k=b.dataset.o;st.f[k]=!st.f[k];b.classList.toggle('on',st.f[k]);b.setAttribute('aria-pressed',st.f[k]);if(k==='lang')$('#langc').classList.toggle('show',st.f[k]);render()});
@@ -866,6 +906,14 @@ const menu=$('#menu'),burger=$('#burger');
 function toggleMenu(o){menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';if(lenis)o?lenis.stop():lenis.start()}
 burger.addEventListener('click',()=>toggleMenu(!menu.classList.contains('open')));
 
+/* ---------- analytics: fill IDs in data.js, goals on WhatsApp / Telegram clicks ---------- */
+(()=>{const A=MZ.analytics||{};const add=src=>{const e=document.createElement('script');e.async=1;e.src=src;document.head.appendChild(e)};
+ if(A.ga4){add('https://www.googletagmanager.com/gtag/js?id='+A.ga4);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',A.ga4)}
+ if(A.ym){window.ym=window.ym||function(){(ym.a=ym.a||[]).push(arguments)};ym.l=+new Date;add('https://mc.yandex.ru/metrika/tag.js');ym(+A.ym,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true})}
+ document.addEventListener('click',e=>{const a=e.target.closest('a[href*="wa.me"],a[href*="t.me/"]');if(!a)return;const g=a.href.includes('wa.me')?'whatsapp_click':'telegram_click';
+  if(window.gtag&&A.ga4)gtag('event',g,{link_url:a.href});if(window.ym&&A.ym)ym(+A.ym,'reachGoal',g)});
+})();
+
 /* ---------- WebGL fog (живой фон) ---------- */
 function hex(c){c=getComputedStyle(document.documentElement).getPropertyValue(c).trim().replace('#','');return [0,2,4].map(i=>parseInt(c.substr(i,2),16)/255)}
 function fog(canvas){
@@ -901,7 +949,7 @@ function fog(canvas){
   gl.uniform1f(U('t'),RM?10:(performance.now()-t0)/1000);gl.uniform2f(U('m'),st.mx,-st.my);gl.drawArrays(gl.TRIANGLES,0,3)})();
  return st;
 }
-fog($('#fog1'));fog($('#fog2'));fog($('#fog3'));
+fog($('#fog1'));if(innerWidth>900){fog($('#fog2'));fog($('#fog3'))}
 
 /* ---------- static fallback (no GSAP / reduced motion) ---------- */
 const GS=!!(window.gsap&&window.ScrollTrigger)&&!RM;
