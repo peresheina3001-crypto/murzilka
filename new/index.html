@@ -74,9 +74,9 @@ button{font:inherit;color:inherit;cursor:pointer}
 .burger i{display:block;width:16px;height:1.5px;background:currentColor;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor}
 .menu{position:fixed;inset:0;z-index:49;background:var(--deep);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:110px var(--pad) 40px;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.7,0,.2,1);visibility:hidden}
 .menu.open{clip-path:inset(0);visibility:visible}
-.menu a{font:700 clamp(34px,10vw,56px)/1.1 'Unbounded',sans-serif;text-decoration:none;display:block;padding:6px 0}
+.menu>a{font:700 clamp(34px,10vw,56px)/1.1 'Unbounded',sans-serif;text-decoration:none;display:block;padding:6px 0}
 .menu .row{display:flex;gap:10px;margin-top:32px;flex-wrap:wrap}
-.menu .row a{font:500 16px 'Onest',sans-serif}
+.menu .row a{font:500 16px 'Onest',sans-serif;flex:1}
 
 /* preloader */
 .pre{position:fixed;inset:0;z-index:100;background:var(--deep);color:var(--blush);display:grid;place-items:center}
@@ -399,6 +399,32 @@ section{position:relative}
   <div class="hero-side" id="heroSide"><span class="scroll-hint">листайте<i></i></span></div>
 </section>
 
+<!-- FEATURES -->
+<section class="feat" id="feat">
+  <div class="marq" id="marq" aria-hidden="true"></div>
+  <div class="fpin" id="fpin">
+  <div class="wrap">
+    <div class="fhead">
+      <div>
+        <div class="kicker"><svg class="star rot"><use href="#star"/></svg>В каждом сайте</div>
+        <h2 class="h2 split"><span class="ln"><span>Что будет</span></span><span class="ln"><span>у вашего сайта</span></span></h2>
+      </div>
+      <div class="fcount"><b id="fNum">01</b><span>/ 05</span></div>
+    </div>
+  </div>
+  <div class="ftrack-w">
+    <div class="ftrack" id="ftrack" tabindex="0" aria-label="Что будет у вашего сайта, листайте вбок">
+      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><rect pathLength="1" x="4" y="12" width="40" height="28" rx="3"/><path pathLength="1" d="M14 48h20M24 40v8"/><rect pathLength="1" x="40" y="22" width="20" height="34" rx="4"/><path pathLength="1" d="M48 51h4"/></svg></div><b>Адаптация под устройства</b><p>Сайт будет удобно смотреть на телефоне, планшете и компьютере.</p></article>
+      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><circle pathLength="1" cx="32" cy="32" r="24"/><circle pathLength="1" cx="32" cy="32" r="14"/><circle pathLength="1" cx="32" cy="32" r="4"/><path pathLength="1" d="M32 32 52 12M46 12h6v6"/></svg></div><b>Под ваш бизнес</b><p>Подберу структуру, функции и языки с учётом ваших услуг и клиентов.</p></article>
+      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><path pathLength="1" d="M36 4 12 36h18l-4 24 24-32H32z"/></svg></div><b>Быстрая загрузка и SEO-основа</b><p>Подготовлю сайт к поисковому продвижению и позабочусь о комфортной загрузке страниц.</p></article>
+      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><rect pathLength="1" x="6" y="14" width="52" height="14" rx="7"/><circle pathLength="1" cx="44" cy="21" r="4"/><rect pathLength="1" x="6" y="38" width="52" height="14" rx="7"/><circle pathLength="1" cx="20" cy="45" r="4"/></svg></div><b>Понятное управление</b><p>Покажу, как обновлять важную информацию самостоятельно.</p></article>
+      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><path pathLength="1" d="M8 12h48v30H30l-12 10v-10H8z"/><path pathLength="1" d="M20 24h24M20 32h14"/></svg></div><b>Поддержка после запуска</b><p>Помогу разобраться с сайтом и его основными функциями.</p></article>
+    </div>
+  </div>
+  <div class="wrap"><div class="fbar"><i id="fBar"></i></div></div>
+  </div>
+</section>
+
 <!-- MANIFESTO -->
 <section class="band mani" id="about">
   <div class="wrap">
@@ -444,32 +470,6 @@ section{position:relative}
         <p class="fine">Цену и сроки фиксируем до начала работы. Сайт, домен и все доступы остаются у вас.</p>
       </aside>
     </div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="feat" id="feat">
-  <div class="marq" id="marq" aria-hidden="true"></div>
-  <div class="fpin" id="fpin">
-  <div class="wrap">
-    <div class="fhead">
-      <div>
-        <div class="kicker"><svg class="star rot"><use href="#star"/></svg>В каждом сайте</div>
-        <h2 class="h2 split"><span class="ln"><span>Что будет</span></span><span class="ln"><span>у вашего сайта</span></span></h2>
-      </div>
-      <div class="fcount"><b id="fNum">01</b><span>/ 05</span></div>
-    </div>
-  </div>
-  <div class="ftrack-w">
-    <div class="ftrack" id="ftrack" tabindex="0" aria-label="Что будет у вашего сайта, листайте вбок">
-      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><rect pathLength="1" x="4" y="12" width="40" height="28" rx="3"/><path pathLength="1" d="M14 48h20M24 40v8"/><rect pathLength="1" x="40" y="22" width="20" height="34" rx="4"/><path pathLength="1" d="M48 51h4"/></svg></div><b>Адаптация под устройства</b><p>Сайт будет удобно смотреть на телефоне, планшете и компьютере.</p></article>
-      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><circle pathLength="1" cx="32" cy="32" r="24"/><circle pathLength="1" cx="32" cy="32" r="14"/><circle pathLength="1" cx="32" cy="32" r="4"/><path pathLength="1" d="M32 32 52 12M46 12h6v6"/></svg></div><b>Под ваш бизнес</b><p>Подберу структуру, функции и языки с учётом ваших услуг и клиентов.</p></article>
-      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><path pathLength="1" d="M36 4 12 36h18l-4 24 24-32H32z"/></svg></div><b>Быстрая загрузка и SEO-основа</b><p>Подготовлю сайт к поисковому продвижению и позабочусь о комфортной загрузке страниц.</p></article>
-      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><rect pathLength="1" x="6" y="14" width="52" height="14" rx="7"/><circle pathLength="1" cx="44" cy="21" r="4"/><rect pathLength="1" x="6" y="38" width="52" height="14" rx="7"/><circle pathLength="1" cx="20" cy="45" r="4"/></svg></div><b>Понятное управление</b><p>Покажу, как обновлять важную информацию самостоятельно.</p></article>
-      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><path pathLength="1" d="M8 12h48v30H30l-12 10v-10H8z"/><path pathLength="1" d="M20 24h24M20 32h14"/></svg></div><b>Поддержка после запуска</b><p>Помогу разобраться с сайтом и его основными функциями.</p></article>
-    </div>
-  </div>
-  <div class="wrap"><div class="fbar"><i id="fBar"></i></div></div>
   </div>
 </section>
 
@@ -810,8 +810,8 @@ gsap.from('.crm .ping',{y:30,scale:.8,opacity:0,duration:.7,ease:'back.out(2)',d
 
 /* marquee: drifts, speeds up with scroll velocity */
 const marq=$('#marq');let mx=0,boost=0,dir=-1;
-lenis.on('scroll',e=>{boost=Math.min(Math.abs(e.velocity)*.12,5);dir=e.direction===1?-1:1});
-gsap.ticker.add(()=>{const w=marq.scrollWidth/3;mx+=dir*(.45+boost);boost*=.92;if(mx<-w)mx+=w;if(mx>0)mx-=w;marq.style.transform=`translate3d(${mx}px,0,0)`});
+lenis.on('scroll',e=>{boost=Math.min(Math.abs(e.velocity)*.25,12);dir=e.direction===1?-1:1});
+gsap.ticker.add(()=>{const w=marq.scrollWidth/3;mx+=dir*(1.1+boost);boost*=.92;if(mx<-w)mx+=w;if(mx>0)mx-=w;marq.style.transform=`translate3d(${mx}px,0,0)`});
 /* features: pinned horizontal ride, cards swing in in 3D, icons draw themselves */
 document.documentElement.classList.add('gs');
 {
