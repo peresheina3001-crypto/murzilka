@@ -155,10 +155,6 @@ button{font:inherit;color:inherit;cursor:pointer}
   .tags{margin-bottom:14px}
   .tags span{font-size:12px;padding:5px 10px}
   .wd .btn{min-height:44px}
-  .svc-list{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:32px calc(-1*var(--pad)) 0;padding:0 var(--pad) 18px;scroll-padding-inline:var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .svc-list::-webkit-scrollbar{display:none}
-  .svc{flex:0 0 86%;scroll-snap-align:start;margin-bottom:0;transform:none!important}
-  .svc-hint{display:flex}
 }
 @media(max-width:900px) and (max-height:740px){.wd ul{display:none}.wdet{min-height:220px}}
 .svc-hint{display:none;align-items:center;justify-content:space-between;margin-top:6px;font-size:14px;color:var(--mute)}
@@ -454,8 +450,8 @@ section{position:relative}
   .burger{display:grid}
   .calc-grid,.mgrid{grid-template-columns:minmax(0,1fr)}
   .total{position:relative;top:0}
-  .svc{grid-template-columns:minmax(0,1fr);min-height:0;position:relative;top:0}
-  .svc .vis{min-height:200px;aspect-ratio:16/10}
+  .svc{grid-template-columns:minmax(0,1fr);min-height:0;top:calc(76px + var(--i)*10px);gap:16px;margin-bottom:4vh}
+  .svc .vis{min-height:0;height:min(150px,20vh);aspect-ratio:auto}
   .proc .steps{grid-template-columns:minmax(0,1fr);padding-top:0;padding-left:44px;gap:40px}
   .proc .rail{top:0;bottom:0;left:6px;right:auto;width:2px;height:auto}
   .proc .rail i{transform-origin:50% 0;transform:scaleY(0)}
@@ -478,6 +474,13 @@ section{position:relative}
   .stats{grid-template-columns:minmax(0,1fr)}
   .farrows{display:none}
   .svc{padding:22px;border-radius:22px}
+  .svc h3{font-size:clamp(22px,6.6vw,28px);margin:8px 0 10px}
+  .svc .d{font-size:15px;line-height:1.45}
+  .svc ul{margin-top:14px;gap:6px}
+  .svc li{font-size:14px}
+  .svc li::before{margin-top:7px;width:6px;height:6px}
+  .price{margin-top:16px}
+  .price b{font-size:44px}
   .svc .vis{order:-1}
   .cta .btn{flex:1}
   .cta .btns{width:100%}
@@ -660,7 +663,6 @@ section{position:relative}
         </div></div>
       </article>
     </div>
-    <div class="svc-hint"><span>Листайте →</span><span class="sd" id="svcDots"><i class="on"></i><i></i><i></i><i></i></span></div>
   </div>
 </section>
 
@@ -974,7 +976,7 @@ const cards=$$('.svc');
 cards.forEach((c,i)=>{
  const img=c.querySelector('.vis img');
  if(img)gsap.to(img,{scale:1,yPercent:-6,ease:'none',scrollTrigger:{trigger:c,start:'top bottom',end:'top top',scrub:true}});
- if(i<cards.length-1&&innerWidth>900)gsap.to(c,{scale:.9,ease:'none',scrollTrigger:{trigger:cards[i+1],start:'top bottom',end:'top '+(96+(i+1)*14)+'px',scrub:true}});
+ if(i<cards.length-1)gsap.to(c,{scale:innerWidth>900?.9:.94,ease:'none',scrollTrigger:{trigger:cards[i+1],start:'top bottom',end:()=>'top '+((innerWidth>900?96:76)+(i+1)*(innerWidth>900?14:10))+'px',scrub:true,invalidateOnRefresh:true}});
  gsap.from(c.querySelectorAll('h3,.d,li,.price'),{y:40,opacity:0,duration:.9,stagger:.06,ease:'power3.out',scrollTrigger:{trigger:c,start:'top 70%'}});
 });
 gsap.from('.crm .row',{x:60,opacity:0,stagger:.12,duration:.8,ease:'power3.out',scrollTrigger:{trigger:'.crm',start:'top 75%'}});
