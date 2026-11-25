@@ -108,10 +108,17 @@ button{font:inherit;color:inherit;cursor:pointer}
 .works canvas{position:absolute;inset:0;width:100%;height:100%}
 .works::before{content:"";position:absolute;left:0;right:0;top:0;height:26vh;background:linear-gradient(var(--ink),rgba(23,11,14,0));z-index:1;pointer-events:none}
 .works::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22vh;background:linear-gradient(rgba(42,7,16,0),var(--deep));z-index:1;pointer-events:none}
-.wpin{position:relative;z-index:2;height:100vh;height:100svh;max-width:1400px;margin:0 auto;padding:100px var(--pad) 60px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(30px,4vw,70px);align-items:center}
-.wname{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font:900 clamp(40px,15vw,280px)/.86 'Unbounded',sans-serif;letter-spacing:-.05em;white-space:nowrap;color:var(--blush);opacity:.12;user-select:none;pointer-events:none;z-index:-1}
+.wpin{position:relative;z-index:2;min-height:100vh;min-height:100svh;max-width:1400px;margin:0 auto;padding:96px var(--pad) 60px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);grid-template-rows:auto 1fr;column-gap:clamp(30px,4vw,70px);row-gap:clamp(16px,3vh,40px);align-items:center}
+.wname{grid-column:1/-1;align-self:start;text-align:center;font:900 clamp(44px,10.5vw,190px)/.9 'Unbounded',sans-serif;letter-spacing:-.1em;white-space:nowrap;color:var(--blush);user-select:none;pointer-events:none}
+.wname span{display:inline-block}
+.whint{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px;font-size:13px;color:rgba(255,255,255,.7)}
+.whint button{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);background:none;color:#fff;font-size:16px;cursor:pointer;transition:background .3s,opacity .3s}
+.whint button:hover{background:rgba(255,255,255,.15)}
+.whint button:disabled{opacity:.3;cursor:default}
+.dots i{cursor:pointer}
+.laptop{touch-action:pan-y}
 .wlap{min-width:0}
-.laptop{position:relative;width:min(100%,108vh);margin:0 auto;will-change:transform}
+.laptop{position:relative;width:min(100%,(100vh - 330px)*1.6);min-width:min(100%,420px);margin:0 auto;will-change:transform}
 .dots{display:flex;gap:8px;justify-content:center;margin-top:26px}
 .dots i{width:6px;height:6px;border-radius:9px;background:rgba(255,255,255,.35);transition:width .4s,background .4s}
 .dots i.on{width:26px;background:#fff}
@@ -135,7 +142,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 .wcard .wd{padding:0 8px}
 @media(max-width:900px){
   .wpin{grid-template-columns:minmax(0,1fr);align-content:center;gap:14px;padding:78px var(--pad) 20px}
-  .wname{top:24%}
+  .wname{font-size:14.5vw;margin-top:6px}
+  .laptop{width:100%}
   .dots{margin-top:14px}
   .wdet{min-height:330px}
   .cap{justify-content:flex-start}
@@ -660,13 +668,14 @@ section{position:relative}
 <section class="works" id="works">
   <canvas id="fog3" aria-hidden="true"></canvas>
   <div class="wpin" id="wpin">
-    <div class="wname" id="wname" aria-hidden="true">РАБОТЫ</div>
+    <h2 class="wname" id="wname" aria-label="Работы"><span>Р</span><span>А</span><span>Б</span><span>О</span><span>Т</span><span>Ы</span></h2>
     <div class="wlap">
       <div class="laptop" id="laptop">
         <div class="lid"><div class="screen" id="screen" data-cur="Открыть"></div></div>
         <div class="base"></div>
       </div>
       <div class="dots" id="dots"></div>
+      <div class="whint"><button id="wPrev" aria-label="Предыдущая работа">←</button><span id="whintT">Крутите колесо над ноутбуком</span><button id="wNext" aria-label="Следующая работа">→</button></div>
     </div>
     <div class="wdet" id="caps" aria-live="polite"></div>
   </div>
@@ -923,20 +932,25 @@ gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'#hero',start:'top 
  .fromTo('#sasha',{yPercent:0},{yPercent:18},0)
  .to('#heroCopy,#heroSide',{y:-80,opacity:0},0);
 
-/* WORKS: desktop pinned scene (laptop + details), phones get a list */
-mm.add('(min-width:0px)',()=>{
- const imgs=$$('#screen img');
- const tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'#wpin',start:'top top',end:()=>'+='+innerHeight*4.4,pin:true,scrub:1,anticipatePin:1,invalidateOnRefresh:true}});
- tl.eventCallback('onUpdate',()=>setWork(Math.max(0,Math.min(WORKS.length-1,Math.floor(tl.time()-.1)))));
- tl.fromTo('#wname',{scale:.9},{scale:1.15,duration:WORKS.length},0)
-   .fromTo('#laptop',{y:60,scale:.92,rotateX:14,transformPerspective:1600},{y:0,scale:1,rotateX:0,duration:.6,ease:'power2.out'},0)
-   ;
- gsap.from('#caps',{y:60,opacity:0,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:'#works',start:'top 60%'}});
- imgs.forEach((im,i)=>{if(!i)return;tl.fromTo(im,{clipPath:'inset(100% 0 0 0)'},{clipPath:'inset(0% 0 0 0)',duration:.5,ease:'power2.inOut'},i-.15)
-   .fromTo(im,{scale:1.1},{scale:1,duration:.5,ease:'power2.out'},'<')});
- tl.to({},{duration:.4});
- return()=>{imgs.forEach((im,i)=>{if(i)im.style.clipPath='inset(100% 0 0 0)'})};
-});
+/* WORKS: title letters spread; projects switch only over the laptop */
+gsap.fromTo('#wname',{letterSpacing:'-.1em',opacity:.35,y:40},{letterSpacing:()=>innerWidth<700?'0em':'.12em',opacity:1,y:0,ease:'none',scrollTrigger:{trigger:'#works',start:'top 95%',end:'top 15%',scrub:true,invalidateOnRefresh:true}});
+gsap.fromTo('#laptop',{y:70,scale:.92,rotateX:14,transformPerspective:1600},{y:0,scale:1,rotateX:0,ease:'none',scrollTrigger:{trigger:'#works',start:'top 85%',end:'top 15%',scrub:1}});
+gsap.from('#caps',{y:60,opacity:0,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:'#works',start:'top 60%'}});
+(()=>{const imgs=$$('#screen img'),last=WORKS.length-1,lap=$('#laptop'),pv=$('#wPrev'),nx=$('#wNext');
+ if(matchMedia('(hover:none)').matches)$('#whintT').textContent='Листайте ноутбук пальцем';
+ let busy=0,acc=0;
+ const go=k=>{k=Math.max(0,Math.min(last,k));if(k===cur)return;
+  imgs.forEach((im,j)=>{if(!j)return;gsap.to(im,{clipPath:j<=k?'inset(0% 0 0 0)':'inset(100% 0 0 0)',duration:.7,ease:'power2.inOut',overwrite:true})});
+  gsap.fromTo(imgs[k],{scale:1.08},{scale:1,duration:.8,ease:'power2.out'});
+  setWork(k);pv.disabled=k===0;nx.disabled=k===last;busy=1;setTimeout(()=>busy=0,650)};
+ pv.disabled=true;pv.onclick=()=>go(cur-1);nx.onclick=()=>go(cur+1);
+ $$('#dots i').forEach((d,k)=>d.onclick=()=>go(k));
+ lap.addEventListener('wheel',e=>{const d=Math.abs(e.deltaY)>Math.abs(e.deltaX)?e.deltaY:e.deltaX;const dir=d>0?1:-1;
+  if((dir>0&&cur>=last)||(dir<0&&cur<=0))return; /* at the edge: let the page scroll */
+  e.preventDefault();e.stopPropagation();if(busy)return;acc+=d;if(Math.abs(acc)>30){acc=0;go(cur+dir)}},{passive:false});
+ let sx=0,sy=0;lap.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+ lap.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))go(cur+(dx<0?1:-1))},{passive:true});
+})();
 gsap.utils.toArray('.wcard').forEach(c=>gsap.from(c,{y:60,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:c,start:'top 88%'}}));
 
 /* nav hide on scroll down + mobile bar */
