@@ -38,7 +38,7 @@ TYPE   : Unbounded (заголовки) + Onest (текст)
 html{scroll-padding-top:80px;-webkit-text-size-adjust:100%}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 'Onest',system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 'Onest',system-ui,sans-serif;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{color:inherit}
 h1,h2,h3{font-family:'Unbounded',sans-serif;font-weight:700;line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
@@ -91,7 +91,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .name{position:absolute;left:0;right:0;top:13vh;text-align:center;font:900 clamp(40px,15vw,280px)/.86 'Unbounded',sans-serif;letter-spacing:-.05em;white-space:nowrap;color:var(--blush);user-select:none}
 .name .ch{display:inline-block;will-change:transform}
 .name .mk{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.04em}
-.sasha{position:absolute;left:50%;bottom:0;height:min(84svh,1100px);transform:translateX(-50%)}.sasha>div,.sasha img{height:100%;width:auto;will-change:transform}.sasha img{filter:drop-shadow(0 30px 60px rgba(20,0,6,.45))}
+.sasha{position:absolute;left:50%;bottom:0;height:min(84vh,1100px);height:min(84svh,1100px);transform:translateX(-50%)}.sasha>div,.sasha img{height:100%;width:auto;max-width:none;will-change:transform}.sasha img{filter:drop-shadow(0 30px 60px rgba(20,0,6,.45))}
 .hero-copy{position:absolute;z-index:2;left:var(--pad);bottom:clamp(28px,6vh,60px);max-width:440px}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;opacity:.85;margin-bottom:14px}
 .hero h1{font-size:clamp(30px,3.1vw,48px)}
@@ -184,7 +184,7 @@ section{position:relative}
 .marq span{flex:none;display:inline-flex;align-items:center;gap:.35em;padding-right:.35em}
 .marq .o{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
 .marq .star{width:.6em;height:.6em}
-.fpin{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(92px,12vh,130px) 0 clamp(24px,4vh,50px)}
+.fpin{position:relative;min-height:100vh;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(92px,12vh,130px) 0 clamp(24px,4vh,50px)}
 .fhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px}
 .fcount{display:flex;align-items:baseline;gap:8px;font:800 clamp(40px,5vw,80px)/1 'Unbounded';letter-spacing:-.04em;color:var(--accent);font-variant-numeric:tabular-nums}
 .fcount span{font-size:.35em;color:var(--mute);letter-spacing:0}
@@ -193,19 +193,18 @@ section{position:relative}
 .ftrack::-webkit-scrollbar{display:none}
 .gs .ftrack{overflow:visible;scroll-snap-type:none;width:max-content}
 @media(min-width:1320px){.ftrack{padding-inline:calc((100vw - 1320px)/2 + var(--pad));scroll-padding-inline:calc((100vw - 1320px)/2 + var(--pad))}}
-.fc{position:relative;overflow:hidden;flex:0 0 min(78vw,420px);height:min(56vh,480px);height:min(56svh,480px);scroll-snap-align:start;border-radius:var(--r);padding:clamp(24px,2.6vw,36px);display:flex;flex-direction:column;justify-content:flex-end;background:var(--blush);transform-origin:0% 50%;will-change:transform;box-shadow:0 30px 60px -30px rgba(42,7,16,.35)}
-.fc:nth-child(2){background:var(--accent);color:#fff}
-.fc:nth-child(3){background:var(--ink);color:var(--paper)}
-.fc:nth-child(4){background:#fff}
-.fc:nth-child(5){background:var(--accent-2);color:#fff}
-.fc .ico{margin-bottom:auto}
-.fc svg{width:clamp(70px,8vw,110px);height:auto;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.fc svg *{stroke-dasharray:1;stroke-dashoffset:0}
-.fc b{position:relative;font:700 clamp(22px,2.1vw,30px)/1.15 'Unbounded';margin:30px 0 12px;text-wrap:balance}
-.fc p{position:relative;opacity:.8}
-.fc::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.28),transparent 60%);opacity:0;transition:opacity .35s}
+.fc{position:relative;overflow:hidden;flex:0 0 min(80vw,400px);scroll-snap-align:start;border-radius:var(--r);background:#150709;color:var(--paper);display:flex;flex-direction:column;transform-origin:0% 50%;will-change:transform;box-shadow:0 30px 60px -30px rgba(42,7,16,.5)}
+.fimg{position:relative;height:min(30vh,300px);overflow:hidden}
+.fimg img{width:100%;height:100%;object-fit:cover;transform:scale(1.15);will-change:transform}
+.fimg::after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(transparent,#150709)}
+.ftx{position:relative;padding:4px clamp(20px,2.2vw,30px) clamp(22px,2.4vw,30px)}
+.fnum{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.fn{font:800 clamp(40px,4vw,56px)/1 'Unbounded';letter-spacing:-.04em;color:#ff4d6a;font-variant-numeric:tabular-nums}
+.fnum span{font-size:14px;line-height:1.25;opacity:.7;max-width:190px}
+.fc h3{font-size:clamp(19px,1.6vw,23px);line-height:1.15;margin:0 0 8px}
+.fc p{opacity:.72;font-size:15px;line-height:1.45}
+.fc::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),rgba(255,77,106,.18),transparent 60%);opacity:0;transition:opacity .35s}
 @media(hover:hover){.fc:hover::after{opacity:1}}
-.fc .glow{position:absolute;right:-30%;top:-30%;width:90%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.35),transparent 65%);filter:blur(10px);pointer-events:none}
 .fbar{height:3px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:clamp(10px,2vh,24px)}
 .fbar i{display:block;height:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0)}
 
@@ -270,7 +269,7 @@ section{position:relative}
 .pluses p{color:var(--mute);font-size:16px}
 
 /* cta */
-.cta{position:relative;overflow:hidden;color:#fff;background:radial-gradient(120% 80% at 30% 80%,var(--accent-2),var(--accent) 45%,var(--deep));min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end}
+.cta{position:relative;overflow:hidden;color:#fff;background:radial-gradient(120% 80% at 30% 80%,var(--accent-2),var(--accent) 45%,var(--deep));min-height:100vh;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end}
 .cta canvas{position:absolute;inset:0;width:100%;height:100%}
 .cta .wrap{position:relative;z-index:1;width:100%;padding-top:140px;padding-bottom:40px}
 .cta h2{font-size:clamp(52px,11vw,200px);line-height:.9;letter-spacing:-.05em}
@@ -310,7 +309,7 @@ section{position:relative}
   .burger{display:grid}
   .calc-grid,.mgrid{grid-template-columns:minmax(0,1fr)}
   .total{position:relative;top:0}
-  .svc{grid-template-columns:minmax(0,1fr);min-height:0;top:calc(80px + var(--i)*10px)}
+  .svc{grid-template-columns:minmax(0,1fr);min-height:0;position:relative;top:0}
   .svc .vis{min-height:200px;aspect-ratio:16/10}
   .proc .steps{grid-template-columns:minmax(0,1fr);padding-top:0;padding-left:44px;gap:40px}
   .proc .rail{top:0;bottom:0;left:6px;right:auto;width:2px;height:auto}
@@ -322,9 +321,9 @@ section{position:relative}
 }
 @media(max-width:700px){
   body{font-size:16px}
-  .name{top:13svh}
-  .sasha{height:62svh;bottom:23svh}
-  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:52svh;background:linear-gradient(transparent,rgba(42,7,16,.92) 45%);pointer-events:none}
+  .name{top:13vh;top:13svh}
+  .sasha{height:62vh;height:62svh;bottom:23vh;bottom:23svh}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:52vh;height:52svh;background:linear-gradient(transparent,rgba(42,7,16,.92) 45%);pointer-events:none}
   .hero-copy{z-index:2;right:var(--pad);max-width:none;bottom:24px}
   .hero h1{font-size:clamp(28px,8.4vw,40px)}
   .hero-copy p{margin:10px 0 18px}
@@ -333,7 +332,7 @@ section{position:relative}
   .eyebrow{margin-bottom:10px}
   .laptop{width:94vw;top:44%}
   .caps{top:auto;bottom:max(96px,calc(env(safe-area-inset-bottom) + 90px));height:150px}
-  .works::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40svh;background:linear-gradient(transparent,rgba(42,7,16,.85) 55%);pointer-events:none;z-index:2}
+  .works::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40vh;height:40svh;background:linear-gradient(transparent,rgba(42,7,16,.85) 55%);pointer-events:none;z-index:2}
   .cap{flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px}
   .cap .r{text-align:left}
   .cap .r p{margin-bottom:4px;font-size:15px}
@@ -342,13 +341,15 @@ section{position:relative}
   .dots i{transition:width .4s,background .4s}
   .stats{grid-template-columns:minmax(0,1fr)}
   .fcount{display:none}
-  .fc{height:min(50svh,440px)}
+  .fimg{height:min(27vh,250px)}
+  .fc p{font-size:14px}
   .svc{padding:22px;border-radius:22px}
   .svc .vis{order:-1}
   .cta .btn{flex:1}
   .cta .btns{width:100%}
   .foot{padding-bottom:80px}
 }
+@supports not (aspect-ratio:1/1){.screen{height:0;padding-top:58.75%}.ava{height:0;padding-top:100%}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -413,12 +414,12 @@ section{position:relative}
     </div>
   </div>
   <div class="ftrack-w">
-    <div class="ftrack" id="ftrack" tabindex="0" aria-label="Что будет у вашего сайта, листайте вбок">
-      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><rect pathLength="1" x="4" y="12" width="40" height="28" rx="3"/><path pathLength="1" d="M14 48h20M24 40v8"/><rect pathLength="1" x="40" y="22" width="20" height="34" rx="4"/><path pathLength="1" d="M48 51h4"/></svg></div><b>Адаптация под устройства</b><p>Сайт будет удобно смотреть на телефоне, планшете и компьютере.</p></article>
-      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><circle pathLength="1" cx="32" cy="32" r="24"/><circle pathLength="1" cx="32" cy="32" r="14"/><circle pathLength="1" cx="32" cy="32" r="4"/><path pathLength="1" d="M32 32 52 12M46 12h6v6"/></svg></div><b>Под ваш бизнес</b><p>Подберу структуру, функции и языки с учётом ваших услуг и клиентов.</p></article>
-      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><path pathLength="1" d="M36 4 12 36h18l-4 24 24-32H32z"/></svg></div><b>Быстрая загрузка и SEO-основа</b><p>Подготовлю сайт к поисковому продвижению и позабочусь о комфортной загрузке страниц.</p></article>
-      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><rect pathLength="1" x="6" y="14" width="52" height="14" rx="7"/><circle pathLength="1" cx="44" cy="21" r="4"/><rect pathLength="1" x="6" y="38" width="52" height="14" rx="7"/><circle pathLength="1" cx="20" cy="45" r="4"/></svg></div><b>Понятное управление</b><p>Покажу, как обновлять важную информацию самостоятельно.</p></article>
-      <article class="fc"><span class="glow"></span><div class="ico"><svg viewBox="0 0 64 64"><path pathLength="1" d="M8 12h48v30H30l-12 10v-10H8z"/><path pathLength="1" d="M20 24h24M20 32h14"/></svg></div><b>Поддержка после запуска</b><p>Помогу разобраться с сайтом и его основными функциями.</p></article>
+    <div class="ftrack" id="ftrack" tabindex="0" aria-label="Что будет у вашего сайта">
+      <article class="fc"><div class="fimg"><img src="img/f-devices.webp" alt="" width="760" height="760"></div><div class="ftx"><div class="fnum"><b class="fn" data-n="3">3</b><span>экрана</span></div><h3>Адаптация под устройства</h3><p>Сайт будет удобно смотреть на телефоне, планшете и компьютере.</p></div></article>
+      <article class="fc"><div class="fimg"><img src="img/f-blocks.webp" alt="" width="760" height="760"></div><div class="ftx"><div class="fnum"><b class="fn" data-n="6">6</b><span>языков на выбор</span></div><h3>Под ваш бизнес</h3><p>Подберу структуру, функции и языки с учётом ваших услуг и клиентов.</p></div></article>
+      <article class="fc"><div class="fimg"><img src="img/f-seo.webp" alt="" width="760" height="760"></div><div class="ftx"><div class="fnum"><b class="fn" data-n="2">2</b><span>системы аналитики: Google и Яндекс</span></div><h3>Быстрая загрузка и SEO-основа</h3><p>Подготовлю сайт к поисковому продвижению и позабочусь о комфортной загрузке страниц.</p></div></article>
+      <article class="fc"><div class="fimg"><img src="img/f-admin.webp" alt="" width="760" height="760"></div><div class="ftx"><div class="fnum"><b class="fn" data-n="0">0</b><span>программистов, чтобы поменять цены и фото</span></div><h3>Понятное управление</h3><p>Покажу, как обновлять важную информацию самостоятельно.</p></div></article>
+      <article class="fc"><div class="fimg"><img src="img/f-support.webp" alt="" width="760" height="760"></div><div class="ftx"><div class="fnum"><b class="fn">1:1</b><span>связь со мной напрямую в мессенджере</span></div><h3>Поддержка после запуска</h3><p>Помогу разобраться с сайтом и его основными функциями.</p></div></article>
     </div>
   </div>
   <div class="wrap"><div class="fbar"><i id="fBar"></i></div></div>
@@ -802,15 +803,15 @@ const cards=$$('.svc');
 cards.forEach((c,i)=>{
  const img=c.querySelector('.vis img');
  if(img)gsap.to(img,{scale:1,yPercent:-6,ease:'none',scrollTrigger:{trigger:c,start:'top bottom',end:'top top',scrub:true}});
- if(i<cards.length-1)gsap.to(c,{scale:.9,filter:'brightness(.6)',ease:'none',scrollTrigger:{trigger:cards[i+1],start:'top bottom',end:'top '+(96+(i+1)*14)+'px',scrub:true}});
+ if(i<cards.length-1&&innerWidth>900)gsap.to(c,{scale:.9,filter:'brightness(.6)',ease:'none',scrollTrigger:{trigger:cards[i+1],start:'top bottom',end:'top '+(96+(i+1)*14)+'px',scrub:true}});
  gsap.from(c.querySelectorAll('h3,.d,li,.price'),{y:40,opacity:0,duration:.9,stagger:.06,ease:'power3.out',scrollTrigger:{trigger:c,start:'top 70%'}});
 });
 gsap.from('.crm .row',{x:60,opacity:0,stagger:.12,duration:.8,ease:'power3.out',scrollTrigger:{trigger:'.crm',start:'top 75%'}});
 gsap.from('.crm .ping',{y:30,scale:.8,opacity:0,duration:.7,ease:'back.out(2)',delay:.5,scrollTrigger:{trigger:'.crm',start:'top 75%'}});
 
 /* marquee: drifts, speeds up with scroll velocity */
-const marq=$('#marq');let mx=0,boost=0,dir=-1;
-lenis.on('scroll',e=>{boost=Math.min(Math.abs(e.velocity)*.25,12);dir=e.direction===1?-1:1});
+const marq=$('#marq');let mx=0,boost=0,dir=1;
+lenis.on('scroll',e=>{boost=Math.min(Math.abs(e.velocity)*.25,12);dir=e.direction===1?1:-1});
 gsap.ticker.add(()=>{const w=marq.scrollWidth/3;mx+=dir*(1.1+boost);boost*=.92;if(mx<-w)mx+=w;if(mx>0)mx-=w;marq.style.transform=`translate3d(${mx}px,0,0)`});
 /* features: pinned horizontal ride, cards swing in in 3D, icons draw themselves */
 document.documentElement.classList.add('gs');
@@ -822,9 +823,8 @@ document.documentElement.classList.add('gs');
  cards.forEach((c,i)=>{
   gsap.fromTo(c,{rotateY:-42,rotateZ:4,scale:.84,yPercent:6,opacity:.6},{rotateY:0,rotateZ:0,scale:1,yPercent:0,opacity:1,ease:'none',
    scrollTrigger:{trigger:c,containerAnimation:hT,start:'left 105%',end:'left 40%',scrub:true}});
-  gsap.fromTo(c.querySelectorAll('svg *'),{strokeDashoffset:1},{strokeDashoffset:0,stagger:.1,ease:'none',
-   scrollTrigger:{trigger:c,containerAnimation:hT,start:'left 85%',end:'left 35%',scrub:true}});
-  gsap.fromTo(c.querySelector('.glow'),{xPercent:40,yPercent:30},{xPercent:-40,yPercent:-10,ease:'none',scrollTrigger:{trigger:c,containerAnimation:hT,start:'left right',end:'right left',scrub:true}});
+  gsap.fromTo(c.querySelector('.fimg img'),{xPercent:-8,scale:1.2},{xPercent:8,scale:1.05,ease:'none',scrollTrigger:{trigger:c,containerAnimation:hT,start:'left right',end:'right left',scrub:true}});
+  const fn=c.querySelector('.fn[data-n]');if(fn){const to=+fn.dataset.n,o={v:0};ScrollTrigger.create({trigger:c,containerAnimation:hT,start:'left 80%',once:true,onEnter:()=>gsap.fromTo(o,{v:to?0:9},{v:to,duration:1.2,ease:'power3.out',onUpdate:()=>fn.textContent=Math.round(o.v)})})}
  });
  gsap.from('.fhead>*',{y:40,opacity:0,stagger:.1,duration:1,ease:'expo.out',scrollTrigger:{trigger:'#fpin',start:'top 80%'}});
  gsap.from('.ftrack-w',{x:240,opacity:0,duration:1.4,ease:'expo.out',scrollTrigger:{trigger:'#fpin',start:'top 70%'}});
