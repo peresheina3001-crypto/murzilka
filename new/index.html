@@ -260,6 +260,85 @@ section{position:relative}
 .fnum{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
 .fn{font:800 clamp(38px,3.6vw,52px)/1 'Unbounded';letter-spacing:-.04em;color:var(--accent);font-variant-numeric:tabular-nums}
 .fnum span{font-size:14px;line-height:1.25;color:var(--mute);max-width:190px}
+/* feature mini-interfaces */
+.fimg.mu{background:linear-gradient(160deg,#F6EDEA,var(--paper) 80%);padding:16px}
+.mu{font-family:'Onest',sans-serif;color:var(--ink)}
+.mu-box{width:100%;max-width:300px;background:#fff;border:1.5px solid #ecdfdf;border-radius:16px;padding:12px 14px;box-shadow:0 14px 30px -18px rgba(122,16,39,.35)}
+/* 1 devices */
+.mu-dev{width:100%;max-width:300px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.mu-tabs{position:relative;display:grid;grid-template-columns:repeat(3,1fr);width:100%;background:#fff;border:1.5px solid #ecdfdf;border-radius:99px;padding:3px;font-size:12px;font-weight:600;text-align:center}
+.mu-tabs span{position:relative;z-index:1;padding:6px 0;transition:color .3s}
+.mu-ind{position:absolute;top:3px;bottom:3px;left:3px;width:calc((100% - 6px)/3);border-radius:99px;background:var(--accent)}
+.mu-stage{height:96px;width:100%;display:flex;justify-content:center;align-items:flex-start}
+.mu-page{width:100%;height:100%;background:#fff;border:2px solid var(--ink);border-radius:8px;padding:8px;display:flex;flex-direction:column;gap:5px;overflow:hidden}
+.mu-page b{display:block;height:9px;width:46%;border-radius:5px;background:var(--accent)}
+.mu-page .l1,.mu-page .l2{display:block;height:5px;border-radius:3px;background:#e9c4c3}.mu-page .l1{width:80%}.mu-page .l2{width:60%}
+.mu-cols{display:flex;gap:5px;flex:1;margin-top:3px}.mu-cols u{flex:1;border-radius:4px;background:#F1DCD8;min-width:14px}
+.fc.on .mu-ind{animation:muInd 7.5s cubic-bezier(.7,0,.2,1) infinite}
+.fc.on .mu-page{animation:muPage 7.5s cubic-bezier(.7,0,.2,1) infinite}
+.fc.on .mu-tabs .t1{animation:muT1 7.5s infinite}.fc.on .mu-tabs .t2{animation:muT2 7.5s infinite}.fc.on .mu-tabs .t3{animation:muT3 7.5s infinite}
+.mu-tabs .t1{color:#fff}
+@keyframes muInd{0%,28%{transform:translateX(0)}33%,61%{transform:translateX(100%)}66%,95%{transform:translateX(200%)}100%{transform:translateX(0)}}
+@keyframes muPage{0%,28%{width:100%;border-radius:8px}33%,61%{width:58%;border-radius:10px}66%,95%{width:34%;border-radius:12px}100%{width:100%}}
+@keyframes muT1{0%,28%,100%{color:#fff}33%,95%{color:var(--ink)}}
+@keyframes muT2{0%,28%,66%,100%{color:var(--ink)}33%,61%{color:#fff}}
+@keyframes muT3{0%,61%,100%{color:var(--ink)}66%,95%{color:#fff}}
+/* 2 business */
+.mu-biz{display:grid;gap:9px;font-size:13px}
+.mu-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mu-row span:first-child{font-weight:600}
+.mu-langs{display:flex;gap:4px}.mu-langs em{font-style:normal;font-size:11px;font-weight:700;padding:4px 7px;border-radius:7px;background:#f4eaea;color:var(--accent)}
+.mu-langs em.on{background:var(--accent);color:#fff}.mu-langs .pl{background:none;border:1.5px dashed #e0c9ca}
+.mu-sw{flex:none;position:relative;width:34px;height:20px;border-radius:99px;background:#e6dada;transition:background .3s}
+.mu-sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .3s}
+.fc.on .mu-sw{animation:muSwBg .01s both}.fc.on .mu-sw::after{animation:muSwK .4s cubic-bezier(.3,1.4,.5,1) both}
+.fc.on .s1,.fc.on .s1::after{animation-delay:.5s}.fc.on .s2,.fc.on .s2::after{animation-delay:1.1s}.fc.on .s3,.fc.on .s3::after{animation-delay:1.7s}
+@keyframes muSwBg{to{background:var(--accent)}}@keyframes muSwK{to{transform:translateX(14px)}}
+.fc.on .mu-langs em:nth-child(2){animation:muLang .3s 2.2s both}.fc.on .mu-langs em:nth-child(3){animation:muLang .3s 2.5s both}
+@keyframes muLang{to{background:var(--accent);color:#fff}}
+/* 3 seo */
+.mu-seo{display:grid;gap:8px}
+.mu-q{display:flex;align-items:center;gap:8px;border:1.5px solid #e6dada;border-radius:99px;padding:6px 12px;font-size:12px;color:var(--mute)}
+.mu-type{display:inline-block;overflow:hidden;white-space:nowrap;border-right:1.5px solid var(--accent);width:0}
+.fc.on .mu-type{animation:muType 1.4s steps(15) .3s forwards,muBlink .8s step-end infinite}
+@keyframes muType{to{width:15ch}}@keyframes muBlink{50%{border-color:transparent}}
+.mu-res{opacity:0;transform:translateY(8px)}.fc.on .mu-res{animation:muIn .5s 1.8s both}
+.mu-res small{display:block;font-size:10px;color:var(--mute)}.mu-res b{font-size:13px;color:var(--accent)}
+.mu-chart{display:flex;align-items:flex-end;gap:5px;height:40px}
+.mu-chart i{flex:1;height:var(--h);border-radius:4px 4px 1px 1px;background:linear-gradient(var(--accent-2),var(--accent));transform-origin:50% 100%;transform:scaleY(0)}
+.fc.on .mu-chart i{animation:muGrow .6s cubic-bezier(.2,.8,.2,1) both}
+.fc.on .mu-chart i:nth-child(1){animation-delay:2s}.fc.on .mu-chart i:nth-child(2){animation-delay:2.08s}.fc.on .mu-chart i:nth-child(3){animation-delay:2.16s}.fc.on .mu-chart i:nth-child(4){animation-delay:2.24s}.fc.on .mu-chart i:nth-child(5){animation-delay:2.32s}.fc.on .mu-chart i:nth-child(6){animation-delay:2.4s}.fc.on .mu-chart i:nth-child(7){animation-delay:2.48s}
+@keyframes muGrow{to{transform:scaleY(1)}}
+.mu-an{display:flex;gap:6px;font-size:10px;font-weight:600;color:var(--mute)}.mu-an span{padding:3px 7px;border-radius:6px;background:#f4eaea}
+@keyframes muIn{to{opacity:1;transform:none}}
+/* 4 admin */
+.mu-adm small{display:block;font-size:11px;color:var(--mute);margin-bottom:6px}
+.mu-in{position:relative;height:38px;border:1.5px solid #e6dada;border-radius:10px;font-weight:700;font-size:15px;overflow:hidden}
+.mu-in span{position:absolute;left:12px;top:50%;transform:translateY(-50%)}
+.mu-in .v2{opacity:0}
+.mu-car{position:absolute;top:10px;bottom:10px;width:1.5px;background:var(--accent);left:62px;opacity:0}
+.fc.on .mu-in{animation:muFocus 6s infinite}
+.fc.on .mu-in .v1{animation:muV1 6s infinite}.fc.on .mu-in .v2{animation:muV2 6s infinite}.fc.on .mu-car{animation:muCar 6s infinite}
+.mu-btn{margin-top:10px;border-radius:99px;background:var(--accent);color:#fff;text-align:center;font-weight:700;font-size:13px;padding:9px}
+.fc.on .mu-btn{animation:muPress 6s infinite}
+.mu-ok{margin-top:8px;font-size:12px;font-weight:700;color:#1f8a55;opacity:0}
+.fc.on .mu-ok{animation:muOk 6s infinite}
+@keyframes muFocus{0%,8%{border-color:#e6dada}12%,55%{border-color:var(--accent)}60%,100%{border-color:#e6dada}}
+@keyframes muV1{0%,25%{opacity:1;transform:translateY(-50%)}32%,92%{opacity:0;transform:translateY(-120%)}100%{opacity:1;transform:translateY(-50%)}}
+@keyframes muV2{0%,25%{opacity:0;transform:translateY(20%)}32%,92%{opacity:1;transform:translateY(-50%)}100%{opacity:0}}
+@keyframes muCar{0%,10%{opacity:0}12%,20%,28%,36%,44%,52%{opacity:1}16%,24%,32%,40%,48%{opacity:0}55%,100%{opacity:0}}
+@keyframes muPress{0%,56%,64%,100%{transform:none;filter:none}60%{transform:scale(.95);filter:brightness(1.2)}}
+@keyframes muOk{0%,62%{opacity:0;transform:translateY(4px)}68%,92%{opacity:1;transform:none}100%{opacity:0}}
+/* 5 support */
+.mu-chat{width:100%;max-width:300px;display:flex;flex-direction:column;gap:8px;font-size:13px}
+.mu-b{align-self:flex-start;max-width:82%;padding:9px 12px;border-radius:16px 16px 16px 4px;background:#fff;border:1.5px solid #ecdfdf;opacity:0;transform:translateY(10px) scale(.96);transform-origin:0 100%}
+.mu-b.me{align-self:flex-end;background:var(--accent);color:#fff;border-color:var(--accent);border-radius:16px 16px 4px 16px;transform-origin:100% 100%}
+.fc.on .c1{animation:muPop .45s cubic-bezier(.2,.9,.3,1.3) .3s both}.fc.on .c2{animation:muPop .45s cubic-bezier(.2,.9,.3,1.3) 1.3s both}.fc.on .c3{animation:muPop .45s cubic-bezier(.2,.9,.3,1.3) 2.1s both}
+@keyframes muPop{to{opacity:1;transform:none}}
+.mu-dots{display:flex;gap:4px;padding:11px 14px}.mu-dots i{width:6px;height:6px;border-radius:50%;background:#fff;opacity:.5}
+.fc.on .mu-dots i{animation:muDot 1.2s infinite}.fc.on .mu-dots i:nth-child(2){animation-delay:.15s}.fc.on .mu-dots i:nth-child(3){animation-delay:.3s}
+@keyframes muDot{0%,60%,100%{opacity:.4;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.mu *{animation:none!important;opacity:1!important;transform:none!important;width:auto}}
 .fc h3{font-size:clamp(19px,1.6vw,22px);line-height:1.15;margin:0 0 8px}
 .fc p{color:var(--mute);font-size:15px;line-height:1.45}
 .fbar{height:3px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:clamp(10px,2vh,24px)}
@@ -461,11 +540,11 @@ section{position:relative}
   </div>
   <div class="ftrack-w">
     <div class="ftrack" id="ftrack" tabindex="0" aria-label="Что будет у вашего сайта, листайте вбок">
-      <article class="fc"><div class="fimg"><svg viewBox="0 0 320 200" class="ill"><rect class="w sh" x="34" y="26" width="176" height="114" rx="10"/><rect class="b" x="44" y="36" width="156" height="94" rx="4"/><rect class="a" x="56" y="48" width="74" height="9" rx="4.5"/><rect class="a o" x="56" y="64" width="116" height="5" rx="2.5"/><rect class="a o" x="56" y="74" width="92" height="5" rx="2.5"/><rect class="a" x="56" y="96" width="46" height="18" rx="9"/><rect class="w" x="112" y="90" width="76" height="30" rx="6"/><path class="a" d="M18 144h208l-12 14H30z"/><g class="float"><rect class="w sh" x="226" y="58" width="58" height="108" rx="12"/><rect class="b" x="233" y="68" width="44" height="86" rx="5"/><rect class="a" x="240" y="78" width="30" height="7" rx="3.5"/><rect class="a o" x="240" y="92" width="24" height="4" rx="2"/><rect class="a o" x="240" y="100" width="18" height="4" rx="2"/><rect class="a" x="240" y="134" width="26" height="12" rx="6"/></g></svg></div><div class="ftx"><div class="fnum"><b class="fn" data-n="3">3</b><span>экрана</span></div><h3>Адаптация под устройства</h3><p>Сайт будет удобно смотреть на телефоне, планшете и компьютере</p></div></article>
-      <article class="fc"><div class="fimg"><svg viewBox="0 0 320 200" class="ill"><circle class="w sh" cx="160" cy="100" r="54"/><g class="l"><circle cx="160" cy="100" r="44"/><ellipse cx="160" cy="100" rx="18" ry="44"/><path d="M116 100h88M122 78h76M122 122h76"/></g><g class="chip float" style="animation-delay:0s"><rect class="a" x="30" y="30" width="50" height="28" rx="14"/><text x="55" y="49" class="tw">RU</text></g><g class="chip float" style="animation-delay:0.4s"><rect class="w sh" x="238" y="26" width="50" height="28" rx="14"/><text x="263" y="45" class="ta">EN</text></g><g class="chip float" style="animation-delay:0.8s"><rect class="w sh" x="14" y="104" width="50" height="28" rx="14"/><text x="39" y="123" class="ta">KA</text></g><g class="chip float" style="animation-delay:1.2s"><rect class="a" x="254" y="96" width="50" height="28" rx="14"/><text x="279" y="115" class="tw">TR</text></g><g class="chip float" style="animation-delay:1.6s"><rect class="w sh" x="56" y="156" width="50" height="28" rx="14"/><text x="81" y="175" class="ta">HE</text></g><g class="chip float" style="animation-delay:2s"><rect class="a" x="214" y="156" width="50" height="28" rx="14"/><text x="239" y="175" class="tw">DE</text></g></svg></div><div class="ftx"><div class="fnum"><b class="fn" data-n="6">6</b><span>языков на выбор</span></div><h3>Под ваш бизнес</h3><p>Подберу структуру, функции и языки с учётом ваших услуг и клиентов</p></div></article>
-      <article class="fc"><div class="fimg"><svg viewBox="0 0 320 200" class="ill"><rect class="w sh" x="30" y="20" width="260" height="40" rx="20"/><circle class="l" cx="56" cy="40" r="9"/><path class="l" d="m63 47 7 7"/><rect class="a o" x="80" y="36" width="120" height="8" rx="4"/><rect class="a" x="230" y="28" width="48" height="24" rx="12"/><g class="bars"><rect class="b grow" x="64" y="140" width="36" height="40" rx="6"/><rect class="b grow" x="112" y="120" width="36" height="60" rx="6" style="animation-delay:.1s"/><rect class="a grow" x="160" y="96" width="36" height="84" rx="6" style="animation-delay:.2s"/><rect class="a grow" x="208" y="72" width="36" height="108" rx="6" style="animation-delay:.3s"/></g><path class="l draw" d="M58 130 112 106l48-20 70-26" pathLength="1"/><path class="l" d="m218 54 14 6-8 12"/></svg></div><div class="ftx"><div class="fnum"><b class="fn" data-n="2">2</b><span>системы аналитики: Google и Яндекс</span></div><h3>Быстрая загрузка и SEO-основа</h3><p>Подготовлю сайт к поисковому продвижению и позабочусь о комфортной загрузке страниц</p></div></article>
-      <article class="fc"><div class="fimg"><svg viewBox="0 0 320 200" class="ill"><rect class="w sh" x="30" y="18" width="260" height="164" rx="14"/><rect class="b" x="30" y="18" width="62" height="164" rx="14"/><rect class="a" x="46" y="36" width="30" height="30" rx="8"/><rect class="w" x="46" y="78" width="30" height="8" rx="4"/><rect class="w" x="46" y="96" width="30" height="8" rx="4"/><rect class="w" x="46" y="114" width="30" height="8" rx="4"/><rect class="b" x="110" y="38" width="44" height="22" rx="11"/><circle class="a knob" cx="143" cy="49" r="8"/><rect class="a o" x="166" y="45" width="90" height="8" rx="4"/><rect class="b" x="110" y="76" width="44" height="22" rx="11"/><circle class="w sh knob2" cx="121" cy="87" r="8"/><rect class="a o" x="166" y="83" width="70" height="8" rx="4"/><rect class="b" x="110" y="122" width="150" height="6" rx="3"/><rect class="a slide" x="110" y="122" width="96" height="6" rx="3"/><circle class="a" cx="206" cy="125" r="9"/><rect class="a" x="110" y="146" width="72" height="22" rx="11"/><path class="cursor" d="M226 140v32l9-9 6 13 6-3-6-12h12z"/></svg></div><div class="ftx"><div class="fnum"><b class="fn" data-n="0">0</b><span>программистов, чтобы поменять цены и фото</span></div><h3>Понятное управление</h3><p>Покажу, как обновлять важную информацию самостоятельно</p></div></article>
-      <article class="fc"><div class="fimg"><svg viewBox="0 0 320 200" class="ill"><g class="pop"><rect class="w sh" x="30" y="30" width="170" height="50" rx="18"/><path class="w" d="M48 76l-8 18 22-14z"/><rect class="a o" x="48" y="46" width="110" height="7" rx="3.5"/><rect class="a o" x="48" y="60" width="70" height="7" rx="3.5"/></g><g class="pop" style="animation-delay:.5s"><rect class="a" x="120" y="100" width="170" height="54" rx="18"/><path class="a" d="M272 150l10 18-24-14z"/><text x="205" y="133" class="tw" style="font-size:16px">Всё готово!</text></g><g class="pop" style="animation-delay:1s"><rect class="w sh" x="44" y="128" width="62" height="34" rx="17"/><circle class="a" cx="62" cy="145" r="3.5"/><circle class="a" cx="75" cy="145" r="3.5"/><circle class="a" cx="88" cy="145" r="3.5"/></g><path class="a beat" d="M262 46c0-8 10-12 15-5 5-7 15-3 15 5 0 10-15 18-15 18s-15-8-15-18z"/></svg></div><div class="ftx"><div class="fnum"><b class="fn">1:1</b><span>связь со мной напрямую в мессенджере</span></div><h3>Поддержка после запуска</h3><p>Помогу разобраться с сайтом и его основными функциями</p></div></article>
+      <article class="fc"><div class="fimg mu"><div class="mu-dev"><div class="mu-tabs"><span class="t1">Ноутбук</span><span class="t2">Планшет</span><span class="t3">Телефон</span><i class="mu-ind"></i></div><div class="mu-stage"><div class="mu-page"><b></b><i class="l1"></i><i class="l2"></i><div class="mu-cols"><u></u><u></u><u></u></div></div></div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="3">3</b><span>экрана</span></div><h3>Адаптация под устройства</h3><p>Сайт будет удобно смотреть на телефоне, планшете и компьютере</p></div></article>
+      <article class="fc"><div class="fimg mu"><div class="mu-box mu-biz"><div class="mu-row"><span>Языки</span><span class="mu-langs"><em class="on">RU</em><em>EN</em><em>KA</em><em class="pl">+3</em></span></div><div class="mu-row"><span>Онлайн-бронирование</span><i class="mu-sw s1"></i></div><div class="mu-row"><span>Меню и цены</span><i class="mu-sw s2"></i></div><div class="mu-row"><span>Кнопка WhatsApp</span><i class="mu-sw s3"></i></div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="6">6</b><span>языков на выбор</span></div><h3>Под ваш бизнес</h3><p>Подберу структуру, функции и языки с учётом ваших услуг и клиентов</p></div></article>
+      <article class="fc"><div class="fimg mu"><div class="mu-box mu-seo"><div class="mu-q"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="4.5"/><path d="m9.5 9.5 3.5 3.5"/></svg><span class="mu-type">отель в Тбилиси</span></div><div class="mu-res"><small>ваш-сайт.ge</small><b>Ваш сайт — первым в поиске</b></div><div class="mu-chart"><i style="--h:30%"></i><i style="--h:42%"></i><i style="--h:38%"></i><i style="--h:56%"></i><i style="--h:64%"></i><i style="--h:80%"></i><i style="--h:96%"></i></div><div class="mu-an"><span>Google Analytics</span><span>Яндекс Метрика</span></div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="2">2</b><span>системы аналитики: Google и Яндекс</span></div><h3>Быстрая загрузка и SEO-основа</h3><p>Подготовлю сайт к поисковому продвижению и позабочусь о комфортной загрузке страниц</p></div></article>
+      <article class="fc"><div class="fimg mu"><div class="mu-box mu-adm"><small>Номер 102 · цена за ночь</small><div class="mu-in"><span class="v1">540 ₾</span><span class="v2">560 ₾</span><i class="mu-car"></i></div><div class="mu-btn">Сохранить</div><div class="mu-ok">✓ Уже на сайте</div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="0">0</b><span>программистов, чтобы поменять цены и фото</span></div><h3>Понятное управление</h3><p>Покажу, как обновлять важную информацию самостоятельно</p></div></article>
+      <article class="fc"><div class="fimg mu"><div class="mu-chat"><div class="mu-b c1">Как поменять фото на главной?</div><div class="mu-b me c2">Сейчас покажу, это 2 клика</div><div class="mu-b me mu-dots c3"><i></i><i></i><i></i></div></div></div><div class="ftx"><div class="fnum"><b class="fn">1:1</b><span>связь со мной напрямую в мессенджере</span></div><h3>Поддержка после запуска</h3><p>Помогу разобраться с сайтом и его основными функциями</p></div></article>
     </div>
   </div>
   <div class="wrap"><div class="fbar"><i id="fBar"></i></div></div>
