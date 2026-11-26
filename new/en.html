@@ -168,6 +168,10 @@ button{font:inherit;color:inherit;cursor:pointer}
   .wpin{grid-template-columns:minmax(0,1fr);align-content:center;gap:14px;padding:78px var(--pad) 20px}
   .wname{font-size:14.5vw;margin-top:6px}
   .laptop{width:100%}
+  .lid{position:relative;border-radius:24px;padding:12px;box-shadow:0 0 0 1.5px #3a2a2e inset,0 30px 70px rgba(20,0,6,.5)}
+  .lid::after{content:"";position:absolute;top:4px;left:50%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#3a2a2e}
+  .screen{aspect-ratio:4/3;border-radius:12px}
+  .base{display:none}
   .dots{margin-top:14px}
   .wdet{min-height:330px}
   .cap{justify-content:flex-start}
@@ -365,7 +369,7 @@ section{position:relative}
 @keyframes muPop{to{opacity:1;transform:none}}
 .mu-dots{display:flex;gap:4px;padding:11px 14px}.mu-dots i{width:6px;height:6px;border-radius:50%;background:#fff;opacity:.5}
 .fc.on .mu-dots i{animation:muDot 1.2s infinite}.fc.on .mu-dots i:nth-child(2){animation-delay:.15s}.fc.on .mu-dots i:nth-child(3){animation-delay:.3s}
-@keyframes muDot{0%,60%,100%{opacity:.4;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+@keyframes muDot{0%,60%,100%{opacity:.35}30%{opacity:1}}
 @media(prefers-reduced-motion:reduce){.mu *{animation:none!important;opacity:1!important;transform:none!important;width:auto}}
 .fc h3{font-size:clamp(19px,1.6vw,22px);line-height:1.15;margin:0 0 8px}
 .fc p{color:var(--mute);font-size:15px;line-height:1.45}
@@ -655,7 +659,6 @@ section{position:relative}
     <div class="svc-list" id="svcList">
       <article class="svc" style="--i:0">
         <div>
-          <div class="top"><span class="num">Service 1 of 4</span></div>
           <h3>Hotel website with booking</h3>
           <p class="d">Guests see available dates and prices and book directly, with no booking platform commission.</p>
           <ul><li>Availability and price calendar</li><li>Room grid, guests and payments</li><li>Booking notifications in Telegram</li></ul>
@@ -665,7 +668,6 @@ section{position:relative}
       </article>
       <article class="svc" style="--i:1">
         <div>
-          <div class="top"><span class="num">Service 2 of 4</span></div>
           <h3>Multi-page website</h3>
           <p class="d">For a cafe, salon, studio or clinic. A clear structure helps clients quickly find what they need and send a request.</p>
           <ul><li>Services, menu, prices and gallery</li><li>Versions in the languages you need</li><li>Map, reviews and easy navigation</li></ul>
@@ -675,7 +677,6 @@ section{position:relative}
       </article>
       <article class="svc" style="--i:2">
         <div>
-          <div class="top"><span class="num">Service 3 of 4</span></div>
           <h3>Landing page for ads</h3>
           <p class="d">One striking page that presents your offer and turns interest into a request.</p>
           <ul><li>For a tour, service or event</li><li>Request form or jump to WhatsApp</li><li>Google and Yandex analytics set up</li></ul>
@@ -685,7 +686,6 @@ section{position:relative}
       </article>
       <article class="svc" style="--i:3">
         <div>
-          <div class="top"><span class="num">Service 4 of 4</span></div>
           <h3>Your own CRM for requests</h3>
           <p class="d">I collect requests from your site or Instagram in one place, so you can easily track them and never lose a client.</p>
           <ul><li>Request statuses and reminders</li><li>Reply templates</li><li>Easy to manage</li></ul>
@@ -700,7 +700,7 @@ section{position:relative}
         </div></div>
       </article>
     </div>
-    <div class="sctl"><button id="sPrev" aria-label="Previous service" disabled>←</button><span class="sdots" id="sDots"><i class="on"></i><i></i><i></i><i></i></span><span id="sHint">Scroll over the card to flip</span><button id="sNext" aria-label="Next service">→</button></div>
+    <div class="sctl"><button id="sPrev" aria-label="Previous service">←</button><span class="sdots" id="sDots"><i class="on"></i><i></i><i></i><i></i></span><span id="sHint">Scroll over the card to flip</span><button id="sNext" aria-label="Next service">→</button></div>
   </div>
 </section>
 
@@ -794,7 +794,7 @@ const WA='https://wa.me/995555546937';
 const LANG=document.documentElement.lang||'ru';
 const WORKS=MZ.works.map(w=>Object.assign({img:w.img,href:w.href},w[LANG]||w.ru));
 const pad=n=>String(n).padStart(2,'0');
-const wdHTML=(w,i)=>`<div class="n">Project ${pad(i+1)} of ${pad(WORKS.length)}</div><h3>${w.t}</h3><p class="lead">${w.d}</p><ul>${w.li.map(x=>`<li>${x}</li>`).join('')}</ul><div class="tags">${w.tags.map(x=>`<span>${x}</span>`).join('')}</div><a class="btn btn-light" href="${w.href}" target="_blank" rel="noopener"><span>Open site ↗</span></a>`;
+const wdHTML=(w,i)=>`<h3>${w.t}</h3><p class="lead">${w.d}</p><ul>${w.li.map(x=>`<li>${x}</li>`).join('')}</ul><div class="tags">${w.tags.map(x=>`<span>${x}</span>`).join('')}</div><a class="btn btn-light" href="${w.href}" target="_blank" rel="noopener"><span>Open site ↗</span></a>`;
 $('#screen').innerHTML=WORKS.map((w,i)=>`<img src="img/${w.img}.webp" srcset="img/m/${w.img}.webp 1000w, img/${w.img}.webp 1900w" sizes="(max-width:900px) 70vw, 60vw"${i?' loading="lazy"':''} alt="${w.t}" style="${i?'clip-path:inset(100% 0 0 0)':''}${w.img==='doors'?';object-position:center':''}">`).join('');
 $('#caps').innerHTML=WORKS.map((w,i)=>`<div class="cap wd${i?'':' on'}">${wdHTML(w,i)}</div>`).join('');
 $('#wlist').innerHTML='<div class="kicker" style="color:rgba(255,255,255,.7);margin:0"><svg class="star"><use href="#star"/></svg>Works</div><h2 class="h2">Live projects</h2>'+WORKS.map((w,i)=>`<article class="wcard"><a class="shot" href="${w.href}" target="_blank" rel="noopener"><img src="img/${w.img}.webp" alt="${w.t}" loading="lazy" style="${w.img==='doors'?'object-position:center':''}"></a><div class="wd">${wdHTML(w,i)}</div></article>`).join('');
@@ -995,19 +995,19 @@ gsap.fromTo('#wname',{letterSpacing:'-.1em',opacity:.35,y:40},{letterSpacing:()=
 gsap.fromTo('#laptop',{y:70,scale:.92,rotateX:14,transformPerspective:1600},{y:0,scale:1,rotateX:0,ease:'none',scrollTrigger:{trigger:'#works',start:'top 85%',end:'top 15%',scrub:1}});
 gsap.from('#caps',{y:60,opacity:0,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:'#works',start:'top 60%'}});
 (()=>{const imgs=$$('#screen img'),last=WORKS.length-1,lap=$('#laptop'),pv=$('#wPrev'),nx=$('#wNext');
- if(matchMedia('(hover:none)').matches)$('#whintT').textContent='Swipe the laptop';
+ if(matchMedia('(hover:none)').matches)$('#whintT').textContent='Swipe the tablet';
  let busy=0,acc=0;
- const go=k=>{k=Math.max(0,Math.min(last,k));if(k===cur)return;
+ const go=(k,wrap)=>{k=wrap?(k+last+1)%(last+1):Math.max(0,Math.min(last,k));if(k===cur)return;
   imgs.forEach((im,j)=>{if(!j)return;gsap.to(im,{clipPath:j<=k?'inset(0% 0 0 0)':'inset(100% 0 0 0)',duration:.7,ease:'power2.inOut',overwrite:true})});
   gsap.fromTo(imgs[k],{scale:1.08},{scale:1,duration:.8,ease:'power2.out'});
-  setWork(k);pv.disabled=k===0;nx.disabled=k===last;busy=1;setTimeout(()=>busy=0,650)};
- pv.disabled=true;pv.onclick=()=>go(cur-1);nx.onclick=()=>go(cur+1);
+  setWork(k);busy=1;setTimeout(()=>busy=0,650)};
+ pv.onclick=()=>go(cur-1,1);nx.onclick=()=>go(cur+1,1);
  $$('#dots i').forEach((d,k)=>d.onclick=()=>go(k));
  lap.addEventListener('wheel',e=>{const d=Math.abs(e.deltaY)>Math.abs(e.deltaX)?e.deltaY:e.deltaX;const dir=d>0?1:-1;
   if((dir>0&&cur>=last)||(dir<0&&cur<=0))return; /* at the edge: let the page scroll */
   e.preventDefault();e.stopPropagation();if(busy)return;acc+=d;if(Math.abs(acc)>30){acc=0;go(cur+dir)}},{passive:false});
  let sx=0,sy=0;lap.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
- lap.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))go(cur+(dx<0?1:-1))},{passive:true});
+ lap.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))go(cur+(dx<0?1:-1),1)},{passive:true});
 })();
 gsap.utils.toArray('.wcard').forEach(c=>gsap.from(c,{y:60,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:c,start:'top 88%'}}));
 
@@ -1036,15 +1036,15 @@ gsap.from(cards[0].querySelectorAll('h3,.d,li,.price'),{y:40,opacity:0,duration:
   const v=d>0?{y:-Math.min(d,2)*14,scale:1-Math.min(d,2)*.045,opacity:d>2?0:1}:d===0?{y:0,scale:1,opacity:1}:{y:90,scale:1,opacity:0};
   gsap.to(c,{...v,transformOrigin:'50% 0%',duration:t,ease:'power3.out',overwrite:'auto'})});
  lay(0);
- const go=k=>{k=Math.max(0,Math.min(last,k));if(k===sc)return;const fw=k>sc;sc=k;lay(.75);
+ const go=(k,wrap)=>{const fw=k>sc;k=wrap?(k+last+1)%(last+1):Math.max(0,Math.min(last,k));if(k===sc)return;sc=k;lay(.75);
   if(fw)gsap.fromTo(cards[k].querySelectorAll('h3,.d,li,.price'),{y:30,opacity:0},{y:0,opacity:1,duration:.7,stagger:.05,delay:.15,ease:'power3.out'});
-  dots.forEach((d,i)=>d.classList.toggle('on',i===k));pv.disabled=k===0;nx.disabled=k===last;busy=1;setTimeout(()=>busy=0,700)};
- pv.onclick=()=>go(sc-1);nx.onclick=()=>go(sc+1);dots.forEach((d,i)=>d.onclick=()=>go(i));
+  dots.forEach((d,i)=>d.classList.toggle('on',i===k));busy=1;setTimeout(()=>busy=0,700)};
+ pv.onclick=()=>go(sc-1,1);nx.onclick=()=>go(sc+1,1);dots.forEach((d,i)=>d.onclick=()=>go(i));
  if(matchMedia('(hover:none)').matches)$('#sHint').textContent='Swipe the cards';
  list.addEventListener('wheel',e=>{const d=Math.abs(e.deltaY)>Math.abs(e.deltaX)?e.deltaY:e.deltaX;const dir=d>0?1:-1;
   if((dir>0&&sc>=last)||(dir<0&&sc<=0))return;e.preventDefault();e.stopPropagation();if(busy)return;acc+=d;if(Math.abs(acc)>30){acc=0;go(sc+dir)}},{passive:false});
  let sx=0,sy=0;list.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
- list.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))go(sc+(dx<0?1:-1))},{passive:true});
+ list.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))go(sc+(dx<0?1:-1),1)},{passive:true});
 })();
 gsap.from('.crm .row',{x:60,opacity:0,stagger:.12,duration:.8,ease:'power3.out',scrollTrigger:{trigger:'.crm',start:'top 75%'}});
 gsap.from('.crm .ping',{y:30,scale:.8,opacity:0,duration:.7,ease:'back.out(2)',delay:.5,scrollTrigger:{trigger:'.crm',start:'top 75%'}});
