@@ -265,7 +265,7 @@ section{position:relative}
 .ftrack.drag{cursor:grabbing;scroll-snap-type:none}
 .ftrack.drag .fc{pointer-events:none}
 @media(min-width:1320px){.ftrack{padding-inline:calc((100vw - 1320px)/2 + var(--pad));scroll-padding-inline:calc((100vw - 1320px)/2 + var(--pad))}}
-.fc{position:relative;overflow:hidden;flex:0 0 min(80vw,380px);scroll-snap-align:start;border-radius:var(--r);background:#fff;color:var(--ink);display:flex;flex-direction:column;transform-origin:0% 50%;will-change:transform;box-shadow:0 1px 0 var(--line),0 24px 50px -30px rgba(42,7,16,.35)}
+.fc{position:relative;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;flex:0 0 min(80vw,380px);scroll-snap-align:start;border-radius:var(--r);background:#fff;color:var(--ink);display:flex;flex-direction:column;transform-origin:0% 50%;will-change:transform;box-shadow:0 1px 0 var(--line),0 24px 50px -30px rgba(42,7,16,.35)}
 .fimg{position:relative;height:clamp(170px,26vh,230px);background:linear-gradient(160deg,var(--blush),#fff 85%);display:grid;place-items:center;overflow:hidden}
 .ill{width:92%;height:92%;overflow:visible}
 .ill .a{fill:var(--accent)}.ill .b{fill:#e9c4c3}.ill .w{fill:#fff}.ill .o{opacity:.35}
@@ -876,11 +876,12 @@ $('#feats').addEventListener('click',e=>{const l=e.target.closest('[data-l]');if
 {
  const tr=$('#ftrack'),fcs=$$('.fc'),bar=$('#fBar'),prev=$('#fPrev'),next=$('#fNext');
  const stepW=()=>fcs[0].offsetWidth+18;
+ const TOUCH=matchMedia('(hover:none)').matches;
  let raf=0;
  function paint(){raf=0;const r=tr.getBoundingClientRect(),left=r.left+parseFloat(getComputedStyle(tr).paddingLeft);
   fcs.forEach(c=>{const b=c.getBoundingClientRect();const off=(b.left-left)/b.width;
    const ry=off>0?-Math.min(off*16,34):Math.min(-off*30,40),sc=1-Math.min(Math.abs(off)*.06,.12),op=off<-0.6?Math.max(.25,1+(off+.6)*1.4):1;
-   c.style.transform=RM?'':`perspective(1200px) rotateY(${ry.toFixed(2)}deg) scale(${sc.toFixed(3)})`;c.style.opacity=op.toFixed(2)});
+   c.style.transform=RM||Math.abs(off)<.03?'none':TOUCH?`scale(${sc.toFixed(3)})`:`perspective(1200px) rotateY(${ry.toFixed(2)}deg) scale(${sc.toFixed(3)})`;c.style.opacity=op.toFixed(2)});
   const max=tr.scrollWidth-tr.clientWidth,p=max>0?tr.scrollLeft/max:0;bar.style.transform=`scaleX(${Math.max(.08,p)})`;
   prev.disabled=tr.scrollLeft<4;next.disabled=tr.scrollLeft>max-4}
  const req=()=>{if(!raf)raf=requestAnimationFrame(paint)};
