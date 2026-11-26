@@ -39,7 +39,8 @@ window.MZ={
     "Отель",
     "3 языка",
     "Бронирование"
-   ]
+   ],
+   "res": "Для бутик-отеля в Старом Тбилиси сайт стал полноценным каналом привлечения гостей: 54 гостя пришли через него. Всего за два месяца посещаемость выросла более чем в четыре раза: с 173 визитов в октябре до 747 в ноябре — несмотря на то, что ноябрь считается низким сезоном."
   },
   "en": {
    "t": "Checkpoint Hotel",
@@ -53,7 +54,8 @@ window.MZ={
     "Hotel",
     "3 languages",
     "Booking"
-   ]
+   ],
+   "res": "For a boutique hotel in Old Tbilisi, the website became a full-fledged channel for attracting guests: 54 guests came through it. In just two months, traffic grew more than fourfold: from 173 visits in October to 747 in November, even though November is the low season."
   },
   "ka": {
    "t": "Checkpoint Hotel",
@@ -67,7 +69,8 @@ window.MZ={
     "სასტუმრო",
     "3 ენა",
     "ჯავშანი"
-   ]
+   ],
+   "res": "ძველი თბილისის ბუტიკ-სასტუმროსთვის საიტი სტუმრების მოზიდვის სრულფასოვან არხად იქცა: მისი მეშვეობით 54 სტუმარი მოვიდა. სულ რაღაც ორ თვეში ვიზიტები ოთხჯერ მეტად გაიზარდა: ოქტომბრის 173 ვიზიტიდან ნოემბრის 747-მდე, მიუხედავად იმისა, რომ ნოემბერი დაბალ სეზონად ითვლება."
   }
  },
  {
