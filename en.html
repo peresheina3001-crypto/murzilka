@@ -513,6 +513,44 @@ section{position:relative}
 .whint button,.sctl button{border:1px solid rgba(255,255,255,.4);color:#fff}
 @media(hover:hover){.whint button:not(:disabled):hover,.sctl button:not(:disabled):hover{background:#fff;color:var(--ink);border-color:#fff}}
 .farrows button:disabled,.whint button:disabled,.sctl button:disabled{opacity:.3}
+.ftrack{padding:20px calc(50vw - min(40vw,190px)) 90px!important;scroll-padding-inline:0!important}
+@media(max-width:700px){.ftrack{padding-bottom:40px!important}}
+.fc{scroll-snap-align:center!important;transform-origin:50% 120%!important}
+.fc .fimg.mu{position:relative;isolation:isolate}
+.fc .fimg.mu::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");z-index:-1;pointer-events:none}
+.mu-box,.mu-tabs,.mu-page{border:0!important}
+.mu-box{border-radius:18px;box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 18px 40px -18px rgba(0,0,0,.35)!important}
+.fc:nth-child(1) .fimg.mu{background:radial-gradient(120% 90% at 20% 0%,#9B1B36,#3A0A16 72%)}
+.fc:nth-child(1) .mu-tabs{background:rgba(255,255,255,.1);--ink:#F1DCD8;backdrop-filter:blur(6px)}
+.fc:nth-child(1) .mu-ind{background:#C9324F}
+
+.fc:nth-child(1) .mu-page{background:#F6F2EE;box-shadow:0 0 0 5px #1E050B,0 18px 30px -12px rgba(0,0,0,.6)}
+.fc:nth-child(1) .mu-page b{background:var(--accent)}
+.fc:nth-child(1) .mu-page .l1,.fc:nth-child(1) .mu-page .l2{background:#E3CFCB}
+.fc:nth-child(1) .mu-cols u:nth-child(1){background:#F1DCD8}.fc:nth-child(1) .mu-cols u:nth-child(2){background:#E2AFA6}.fc:nth-child(1) .mu-cols u:nth-child(3){background:#C9707A}
+.fc:nth-child(2) .fimg.mu{background:linear-gradient(150deg,#F6E4E0,#E8C3BC)}
+.fc:nth-child(2) .mu-box{background:#FFFBF9}
+.fc:nth-child(2) .mu-row{padding-bottom:7px;border-bottom:1px solid #F1E4E1}.fc:nth-child(2) .mu-row:last-child{border:0;padding:0}
+.fc:nth-child(2) .mu-langs{--accent:#170B0E}.fc:nth-child(2) .mu-langs em{background:#F4ECEA;color:#170B0E}.fc:nth-child(2) .mu-langs em.on{background:#170B0E;color:#fff}
+.fc:nth-child(2) .mu-sw{background:#EADBD8}
+.fc:nth-child(3) .fimg.mu{background:linear-gradient(160deg,#FBF7F4,#EFE2DE)}
+.fc:nth-child(3) .mu-q{border:0;background:#fff;box-shadow:0 1px 6px rgba(42,7,16,.14)}
+.fc:nth-child(3) .mu-res b{color:var(--accent)}
+.fc:nth-child(3) .mu-chart i{background:#E9C4C3}.fc:nth-child(3) .mu-chart i:nth-child(n+4){background:#C9707A}.fc:nth-child(3) .mu-chart i:nth-child(n+6){background:var(--accent)}
+.fc:nth-child(3) .mu-an span{background:#F6EEEC}
+.fc:nth-child(4) .fimg.mu{background:linear-gradient(150deg,#EFE3D6,#DCC3AE)}
+.fc:nth-child(4) .mu-box{background:#FFFCF8}
+.fc:nth-child(4) .mu-in{border-color:#EADDD0;background:#FBF6F1}
+.fc:nth-child(4) .mu-car{background:#170B0E;left:52px}
+.fc:nth-child(4) .mu-btn{background:#170B0E}
+.fc:nth-child(5) .fimg.mu{background:linear-gradient(160deg,#B0263F,#5A0C1E)}
+.fc:nth-child(5) .mu-b{border:0;box-shadow:0 2px 6px rgba(0,0,0,.18);background:#F6F2EE;color:#170B0E}
+.fc:nth-child(5) .mu-b.me{background:#F1DCD8;color:#170B0E}
+.fc:nth-child(5) .mu-dots i{background:var(--accent)}
+.farrows button,.whint button,.sctl button{border:0!important;background:none!important;width:44px;height:44px;border-radius:0}
+.farrows button{color:var(--ink)}.whint button,.sctl button{color:#fff}
+.farrows .ar,.whint .ar,.sctl .ar{width:28px;height:28px;stroke-width:1.3;transition:transform .25s}
+@media(hover:hover){.farrows button:not(:disabled):hover,.whint button:not(:disabled):hover,.sctl button:not(:disabled):hover{color:var(--accent)!important}.whint button:not(:disabled):hover,.sctl button:not(:disabled):hover{color:var(--blush)!important}#fPrev:hover .ar,#wPrev:hover .ar,#sPrev:hover .ar{transform:translateX(-3px)}#fNext:hover .ar,#wNext:hover .ar,#sNext:hover .ar{transform:translateX(3px)}}
 </style>
 <style>.cta h2{font-size:clamp(40px,8vw,150px)}</style>
 </head>
@@ -580,7 +618,7 @@ section{position:relative}
       <article class="fc"><div class="fimg mu"><div class="mu-dev"><div class="mu-tabs"><span class="t1">Laptop</span><span class="t2">Tablet</span><span class="t3">Phone</span><i class="mu-ind"></i></div><div class="mu-stage"><div class="mu-page"><b></b><i class="l1"></i><i class="l2"></i><div class="mu-cols"><u></u><u></u><u></u></div></div></div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="3">3</b><span>screens</span></div><h3>Works on every device</h3><p>Your site is easy to use on a phone, tablet and computer</p></div></article>
       <article class="fc"><div class="fimg mu"><div class="mu-box mu-biz"><div class="mu-row"><span>Languages</span><span class="mu-langs"><em class="on">RU</em><em>EN</em><em>KA</em><em class="pl">+3</em></span></div><div class="mu-row"><span>Online booking</span><i class="mu-sw s1"></i></div><div class="mu-row"><span>Menu and prices</span><i class="mu-sw s2"></i></div><div class="mu-row"><span>WhatsApp button</span><i class="mu-sw s3"></i></div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="6">6</b><span>languages to choose from</span></div><h3>Built for your business</h3><p>I pick the structure, features and languages around your services and clients</p></div></article>
       <article class="fc"><div class="fimg mu"><div class="mu-box mu-seo"><div class="mu-q"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="4.5"/><path d="m9.5 9.5 3.5 3.5"/></svg><span class="mu-type">hotel in Tbilisi</span></div><div class="mu-res"><small>your-site.ge</small><b>Ready for Google promotion</b></div><div class="mu-chart"><i style="--h:30%"></i><i style="--h:42%"></i><i style="--h:38%"></i><i style="--h:56%"></i><i style="--h:64%"></i><i style="--h:80%"></i><i style="--h:96%"></i></div><div class="mu-an"><span>Google Analytics</span><span>Yandex Metrica</span></div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="2">2</b><span>analytics systems: Google and Yandex</span></div><h3>Fast loading and SEO basics</h3><p>I prepare the site for search promotion and make sure pages load fast</p></div></article>
-      <article class="fc"><div class="fimg mu"><div class="mu-box mu-adm"><small>Room 102 · price per night</small><div class="mu-in"><span class="v1">540 ₾</span><span class="v2">560 ₾</span><i class="mu-car"></i></div><div class="mu-btn">Save</div><div class="mu-ok">✓ Live on the site</div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="0">0</b><span>developers needed to change prices and photos</span></div><h3>Easy to manage</h3><p>I show you how to update key information yourself</p></div></article>
+      <article class="fc"><div class="fimg mu"><div class="mu-box mu-adm"><small>Room 102 · price per night</small><div class="mu-in"><span class="v1">$180</span><span class="v2">$190</span><i class="mu-car"></i></div><div class="mu-btn">Save</div><div class="mu-ok">✓ Live on the site</div></div></div><div class="ftx"><div class="fnum"><b class="fn" data-n="0">0</b><span>developers needed to change prices and photos</span></div><h3>Easy to manage</h3><p>I show you how to update key information yourself</p></div></article>
       <article class="fc"><div class="fimg mu"><div class="mu-chat"><div class="mu-b c1">How do I change the homepage photo?</div><div class="mu-b me c2">Let me show you, it takes 2 clicks</div><div class="mu-b me mu-dots c3"><i></i><i></i><i></i></div></div></div><div class="ftx"><div class="fnum"><b class="fn">1:1</b><span>direct contact with me in a messenger</span></div><h3>Support after launch</h3><p>I help you get to know the site and its main features</p></div></article>
     </div>
   </div>
@@ -851,10 +889,10 @@ $('#feats').addEventListener('click',e=>{const l=e.target.closest('[data-l]');if
  const stepW=()=>fcs[0].offsetWidth+18;
  const TOUCH=matchMedia('(hover:none)').matches;
  let raf=0;
- function paint(){raf=0;const r=tr.getBoundingClientRect(),left=r.left+parseFloat(getComputedStyle(tr).paddingLeft);
-  fcs.forEach(c=>{const b=c.getBoundingClientRect();const off=(b.left-left)/b.width;
+ function paint(){raf=0;const r=tr.getBoundingClientRect(),mid=r.left+r.width/2;
+  fcs.forEach(c=>{const b=c.getBoundingClientRect();const off=(b.left+b.width/2-mid)/b.width;
    const ry=off>0?-Math.min(off*16,34):Math.min(-off*30,40),sc=1-Math.min(Math.abs(off)*.06,.12),op=off<-0.6?Math.max(.25,1+(off+.6)*1.4):1;
-   c.style.transform='none';c.style.opacity=1});
+   const o=Math.max(-2.2,Math.min(2.2,off));c.style.transform=RM?'none':`translateY(${(o*o*26).toFixed(1)}px) rotate(${(o*7).toFixed(2)}deg)`;c.style.opacity=(1-Math.min(Math.abs(off)*.12,.35)).toFixed(2)});
   const max=tr.scrollWidth-tr.clientWidth,p=max>0?tr.scrollLeft/max:0;bar.style.transform=`scaleX(${Math.max(.08,p)})`;
   prev.disabled=tr.scrollLeft<4;next.disabled=tr.scrollLeft>max-4}
  const req=()=>{if(!raf)raf=requestAnimationFrame(paint)};
