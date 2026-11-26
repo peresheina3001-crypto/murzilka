@@ -7,7 +7,7 @@ window.MZ={
  /* Аналитика: вставьте ID, и счётчики включатся сами.
     ga4 — вида 'G-XXXXXXXXXX', ym — номер счётчика Яндекс Метрики, например '12345678'.
     Цели: whatsapp_click и telegram_click (нажатия на кнопки WhatsApp и Telegram). */
- analytics:{ga4:'',ym:''},
+ analytics:{ga4:'G-E6WY7VZC5N',ym:''},
 
  prices:{
   /* «от $…» в карточках «Что я делаю» */
