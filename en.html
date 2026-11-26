@@ -921,10 +921,12 @@ function toggleMenu(o){menu.classList.toggle('open',o);burger.setAttribute('aria
 burger.addEventListener('click',()=>toggleMenu(!menu.classList.contains('open')));
 
 (()=>{const A=MZ.analytics||{};const add=src=>{const e=document.createElement('script');e.async=1;e.src=src;document.head.appendChild(e)};
- if(A.ga4){add('https://www.googletagmanager.com/gtag/js?id='+A.ga4);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',A.ga4)}
+ window.dataLayer=window.dataLayer||[];
+ if(A.gtm){dataLayer.push({'gtm.start':+new Date,event:'gtm.js'});add('https://www.googletagmanager.com/gtm.js?id='+A.gtm)}
+ else if(A.ga4){add('https://www.googletagmanager.com/gtag/js?id='+A.ga4);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',A.ga4)}
  if(A.ym){window.ym=window.ym||function(){(ym.a=ym.a||[]).push(arguments)};ym.l=+new Date;add('https://mc.yandex.ru/metrika/tag.js');ym(+A.ym,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true})}
  document.addEventListener('click',e=>{const a=e.target.closest('a[href*="wa.me"],a[href*="t.me/"]');if(!a)return;const g=a.href.includes('wa.me')?'whatsapp_click':'telegram_click';
-  if(window.gtag&&A.ga4)gtag('event',g,{link_url:a.href});if(window.ym&&A.ym)ym(+A.ym,'reachGoal',g)});
+  if(A.gtm)dataLayer.push({event:g,link_url:a.href});else if(window.gtag&&A.ga4)gtag('event',g,{link_url:a.href});if(window.ym&&A.ym)ym(+A.ym,'reachGoal',g)});
 })();
 
 function hex(c){c=getComputedStyle(document.documentElement).getPropertyValue(c).trim().replace('#','');return [0,2,4].map(i=>parseInt(c.substr(i,2),16)/255)}
